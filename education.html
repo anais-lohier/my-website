@@ -12,30 +12,37 @@
   <!-- NAV -->
   <nav>
     <div class="nav-left">Anaïs Lohier</div>
+  
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+  
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="work.html">Work</a>
-      <a href="education.html">Education</a>
-      <a href="resume.html" class="resume-button">Resume</a>
+      <a href="index.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Home</a>
+      <a href="work.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Work</a>
+      <a href="education.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Education</a>
+      <a href="resume.html" class="resume-button" onclick="document.querySelector('.nav-links').classList.remove('active')">Resume</a>
     </div>
   </nav>
+  
 
-  <h1 class="centered" data-aos="fade-down">Education</h1>
+<h1 class="page-title" data-aos="fade-down">Education</h1>
 
-  <!-- Yale -->
-  <div class="edu-card" data-aos="fade-up">
-    <div class="edu-flex">
-      <div class="edu-text">
-        <h2>Yale University</h2>
-        <p>Incoming MS in Biomedical Informatics – Fall 2025</p>
-        <a href="#" id="toggleEssay">Read my admission essay</a>
-        <div id="essayPreview" style="display: none; margin-top: 1rem;">
-          <iframe class="essay-frame" src="projects/yale_essay.pdf" allowfullscreen></iframe>
-        </div>
-      </div>
-      <img src="images/yale.jpg" alt="Yale Logo" class="edu-logo-big">
+<!-- Yale -->
+<div class="edu-card" data-aos="fade-up">
+  <div class="edu-flex">
+    <div class="edu-text">
+      <h2>Yale University</h2>
+      <p>Incoming MS in Biomedical Informatics – Fall 2025</p>
+      <a href="#" id="toggleEssay">Read my admission essay</a>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem;">
+        Want to read the full essay? <a href="mailto:alohier21@gmail.com">Send me an email!</a>
+      </p>
     </div>
+    <img src="images/yale.jpg" alt="Yale Logo" class="edu-logo-big">
   </div>
+  <div id="essayPreview" style="display: none; margin-top: 1rem;">
+    <iframe class="essay-frame" src="projects/yale_essay.pdf" allowfullscreen></iframe>
+  </div>
+</div>
 
   <!-- Cal Poly -->
   <div class="edu-card edu-flex" data-aos="fade-up">
@@ -60,51 +67,51 @@
           <image href="images/world_map.jpg" width="1000" height="563" />
           <image href="images/world_map.jpg" width="1000" height="563" />
 
-<g class="map-point" transform="translate(510,130)">
+<g class="map-point" transform="translate(482,210)">
   <circle r="8" />
   <text dy="-12">Antwerp</text>
 </g>
-<g class="map-point" transform="translate(495,165)">
+<g class="map-point" transform="translate(490,240)">
   <circle r="8" />
   <text dy="-12">Barcelona</text>
 </g>
-<g class="map-point" transform="translate(535,195)">
+<g class="map-point" transform="translate(500,260)">
   <circle r="8" />
   <text dy="-12">Malta</text>
 </g>
-<g class="map-point" transform="translate(565,185)">
+<g class="map-point" transform="translate(530,265)">
   <circle r="8" />
   <text dy="-12">Greece</text>
 </g>
-<g class="map-point" transform="translate(485,180)">
+<g class="map-point" transform="translate(450,255)">
   <circle r="8" />
   <text dy="-12">Gibraltar</text>
 </g>
-<g class="map-point" transform="translate(490,170)">
+<g class="map-point" transform="translate(470,255)">
   <circle r="8" />
   <text dy="-12">Malaga</text>
 </g>
-<g class="map-point" transform="translate(455,245)">
+<g class="map-point" transform="translate(435,280)">
   <circle r="8" />
   <text dy="-12">Canary Islands</text>
 </g>
-<g class="map-point" transform="translate(540,460)">
+<g class="map-point" transform="translate(520,470)">
   <circle r="8" />
   <text dy="-12">South Africa</text>
 </g>
-<g class="map-point" transform="translate(690,430)">
+<g class="map-point" transform="translate(650,430)">
   <circle r="8" />
   <text dy="-12">Mauritius</text>
 </g>
-<g class="map-point" transform="translate(765,320)">
+<g class="map-point" transform="translate(750,350)">
   <circle r="8" />
   <text dy="-12">Malaysia</text>
 </g>
-<g class="map-point" transform="translate(790,310)">
+<g class="map-point" transform="translate(770,340)">
   <circle r="8" />
   <text dy="-12">Vietnam</text>
 </g>
-<g class="map-point" transform="translate(800,300)">
+<g class="map-point" transform="translate(770,375)">
   <circle r="8" />
   <text dy="-12">Thailand</text>
 </g>      
@@ -145,5 +152,8 @@
       }
     });
   </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="script.js"></script>
+  
 </body>
 </html>

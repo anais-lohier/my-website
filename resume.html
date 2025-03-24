@@ -12,16 +12,21 @@
   <!-- NAV -->
   <nav>
     <div class="nav-left">Anaïs Lohier</div>
+  
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+  
     <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="work.html">Work</a>
-      <a href="education.html">Education</a>
-      <a href="resume.html" class="resume-button">Resume</a>
+      <a href="index.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Home</a>
+      <a href="work.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Work</a>
+      <a href="education.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Education</a>
+      <a href="resume.html" class="resume-button" onclick="document.querySelector('.nav-links').classList.remove('active')">Resume</a>
     </div>
   </nav>
+  
 
   <!-- Resume Title -->
-  <h1 class="centered" data-aos="fade-down">My Resume</h1>
+  <h1 class="page-title" data-aos="fade-down">Resume</h1>
+
 
   <!-- Resume Viewer -->
   <div class="edu-card" data-aos="fade-up">
@@ -53,6 +58,7 @@
       scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
     });
   </script>
-
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
