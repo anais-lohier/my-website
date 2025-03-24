@@ -1,41 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anaïs Lohier</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-        <p>Explore my world and get to know me!</p>
-    </header>
-    
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+  <!-- NAV BAR -->
+  <nav>
+    <div class="nav-left">Anaïs Lohier</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="education.html">Education</a>
+      <a href="resume.html" class="resume-button">Resume</a>
+    </div>
+  </nav>
 
-    <main>
-        <img src="profile.jpg" alt="Profile Picture" class="profile-img">
-        <h2>Hi, I'm Anais!</h2>
-        <p>This is my personal website where I share my projects, experiences, and thoughts.</p>
-        
-        <button onclick="showMessage()">Click Me!</button>
-        <p id="message"></p>
-        
-        <br>
-        <a href="contact.html" class="btn">Get in Touch</a>
-    </main>
+  <!-- HEADER -->
+  <header class="hero">
+    <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic big">
+    <h1>Hi, I'm Anaïs</h1>
+    <p class="intro">Bridging biology, machine learning, and global health to reimagine patient care. Yale-bound bioinformatician with a mission to make healthcare smarter, faster, and more equitable.</p>
+  </header>
 
-    <footer>
-        <p>© 2025 Anais Lohier | <a href="https://github.com/anais-lohier">GitHub</a></p>
-    </footer>
+  <!-- ABOUT -->
+  <section id="about" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>Hello! I am a third-year student at Cal Poly majoring in Business Administration with a concentration in Quantitative Analysis and minors in Biology and French. I plan on graduating in June 2025 and will be pursuing a Master's in Bioinformatics at Yale University. Through my coursework, I've developed strong analytical and technical skills that I hope to apply to the healthcare and data science fields.</p>
+    <p>Outside of academics, I mentor with Women in Business and am a member of the Phi Sigma Iota Honor Society. In my free time, I explore amateur botany and enjoy the strategic challenge of escape rooms.</p>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- CONTACT -->
+  <section id="contact" data-aos="fade-up">
+    <h2>Let's Connect!</h2>
+    <p>Email: <a href="mailto:alohier@calpoly.edu">alohier@calpoly.edu</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/anaislohier9323" target="_blank">linkedin.com/in/anaislohier9323</a></p>
+  </section>
+
+  <!-- BACK TO TOP -->
+  <a href="#" class="back-to-top">↑</a>
+
+  <footer>
+    <p>© 2025 Anaïs Lohier</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const scrollBtn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+  </script>
 </body>
 </html>

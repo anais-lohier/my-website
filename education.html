@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Education</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-left">Anaïs Lohier</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="education.html">Education</a>
+      <a href="resume.html" class="resume-button">Resume</a>
+    </div>
+  </nav>
+
+  <h1 class="centered" data-aos="fade-down">Education</h1>
+
+  <!-- Yale -->
+  <div class="edu-card" data-aos="fade-up">
+    <div class="edu-flex">
+      <div class="edu-text">
+        <h2>Yale University</h2>
+        <p>Incoming MS in Biomedical Informatics – Fall 2025</p>
+        <a href="#" id="toggleEssay">Read my admission essay</a>
+        <div id="essayPreview" style="display: none; margin-top: 1rem;">
+          <iframe class="essay-frame" src="projects/yale_essay.pdf" allowfullscreen></iframe>
+        </div>
+      </div>
+      <img src="images/yale.jpg" alt="Yale Logo" class="edu-logo-big">
+    </div>
+  </div>
+
+  <!-- Cal Poly -->
+  <div class="edu-card edu-flex" data-aos="fade-up">
+    <div class="edu-text">
+      <h2>Cal Poly, San Luis Obispo</h2>
+      <p>B.S. in Business Administration (Quantitative Analysis)</p>
+      <p>Minors: Biology & French</p>
+      <p>Clubs: WIB, SMPP, Phi Sigma Iota, Cal Poly Consulting, Club Volleyball</p>
+    </div>
+    <img src="images/cp.jpg" alt="Cal Poly Logo" class="edu-logo-big">
+  </div>
+
+ <!-- Semester at Sea -->
+<div class="edu-card" data-aos="fade-up">
+  <div class="edu-flex">
+    <div class="edu-text">
+      <h2>Semester at Sea – Fall 2023</h2>
+      <p>Voyage 132 — Sep 09 to Dec 22, 2023</p>
+      <p>Hover over the map to explore where I traveled 🌍</p>
+      <div class="map-container">
+        <svg class="svg-overlay" viewBox="0 0 1000 563" preserveAspectRatio="xMidYMid meet">
+          <image href="images/world_map.jpg" width="1000" height="563" />
+          <image href="images/world_map.jpg" width="1000" height="563" />
+
+<g class="map-point" transform="translate(510,130)">
+  <circle r="8" />
+  <text dy="-12">Antwerp</text>
+</g>
+<g class="map-point" transform="translate(495,165)">
+  <circle r="8" />
+  <text dy="-12">Barcelona</text>
+</g>
+<g class="map-point" transform="translate(535,195)">
+  <circle r="8" />
+  <text dy="-12">Malta</text>
+</g>
+<g class="map-point" transform="translate(565,185)">
+  <circle r="8" />
+  <text dy="-12">Greece</text>
+</g>
+<g class="map-point" transform="translate(485,180)">
+  <circle r="8" />
+  <text dy="-12">Gibraltar</text>
+</g>
+<g class="map-point" transform="translate(490,170)">
+  <circle r="8" />
+  <text dy="-12">Malaga</text>
+</g>
+<g class="map-point" transform="translate(455,245)">
+  <circle r="8" />
+  <text dy="-12">Canary Islands</text>
+</g>
+<g class="map-point" transform="translate(540,460)">
+  <circle r="8" />
+  <text dy="-12">South Africa</text>
+</g>
+<g class="map-point" transform="translate(690,430)">
+  <circle r="8" />
+  <text dy="-12">Mauritius</text>
+</g>
+<g class="map-point" transform="translate(765,320)">
+  <circle r="8" />
+  <text dy="-12">Malaysia</text>
+</g>
+<g class="map-point" transform="translate(790,310)">
+  <circle r="8" />
+  <text dy="-12">Vietnam</text>
+</g>
+<g class="map-point" transform="translate(800,300)">
+  <circle r="8" />
+  <text dy="-12">Thailand</text>
+</g>      
+        </svg>
+      </div>
+    </div>
+    <img src="images/semester.png" alt="Semester at Sea Logo" class="edu-logo-big">
+  </div>
+</div>
+
+  <!-- Back to Top -->
+  <a href="#" class="back-to-top">↑</a>
+
+  <footer>
+    <p>© 2025 Anaïs Lohier</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const scrollBtn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+
+    const toggleEssay = document.getElementById('toggleEssay');
+    const essayPreview = document.getElementById('essayPreview');
+    toggleEssay.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (essayPreview.style.display === 'none') {
+        essayPreview.style.display = 'block';
+        toggleEssay.innerText = 'Hide essay';
+      } else {
+        essayPreview.style.display = 'none';
+        toggleEssay.innerText = 'Read my admission essay';
+      }
+    });
+  </script>
+</body>
+</html>

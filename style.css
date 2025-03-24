@@ -1,56 +1,633 @@
-/* Import Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-
+/* GENERAL STYLES */
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
-    text-align: center;
     margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #007bff;
-    color: white;
-    padding: 20px;
-    font-size: 24px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
+    font-family: 'Helvetica Neue', sans-serif;
+    background: #fff;
+    color: #222;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3 {
+    margin: 0.5rem 0;
+  }
+  
+  a {
+    color: #0077b6;
     text-decoration: none;
-    color: #007bff;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* NAVIGATION BAR */
+  nav {
+    background-color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  nav .nav-left {
     font-weight: bold;
-}
-
-main {
-    max-width: 800px;
-    margin: 40px auto;
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-button {
-    background-color: #28a745;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+  }
+  
+  nav .nav-links a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  
+  nav .nav-links a:hover {
+    color: #0077b6;
+  }
+  
+  .resume-button {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #0077b6;
+    background-color: white;
+    color: #0077b6;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-left: 2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .resume-button:hover {
+    background-color: #0077b6;
     color: white;
-    padding: 10px 15px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
+  }
+  
+  /* HERO SECTION */
+  .hero {
+    background: url('images/profile-banner.jpg') no-repeat center center/cover;
+    height: 100vh;
+    text-align: center;
+    color: white;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0 0 8px rgba(0,0,0,0.6);
+  }
+  
+  .profile-pic {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-pic.big {
+    width: 220px;
+    height: 220px;
+  }
+  
+  h1 {
+    font-size: 3.5rem;
+    margin: 0.5rem 0;
+  }
+  
+  .intro {
+    font-size: 1.3rem;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  /* SECTIONS */
+  section {
+    padding: 3rem 1.5rem;
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* EDUCATION CARDS */
+  .edu-card {
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 900px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  
+  .edu-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .edu-card img {
+    height: 50px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sas-map-img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: contain;
+    margin-top: 1rem;
+    border-radius: 10px;
+  }
+  
+  .sas-hover {
+    background: #f0f0f0;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+  }
+  
+  .sas-hover:hover {
+    background: #e0f7fa;
+  }
+  
+  .sas-destinations {
+    list-style: none;
+    padding-left: 0;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+  }
+  
+  .sas-hover:hover .sas-destinations {
+    opacity: 1;
+    max-height: 500px;
+  }
+  
+  .sas-destinations li {
+    margin: 5px 0;
+  }
+  
+  /* WORK SECTION */
+  .centered {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .work-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+  }
+  
+  .work-card {
+    position: relative;
+    width: 320px;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #000;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .work-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .work-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .work-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    box-sizing: border-box;
+    scrollbar-width: none;
+  }
+  
+  .work-overlay::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .work-card:hover .work-overlay {
+    opacity: 1;
+  }
+  
+  .work-overlay h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  
+  .work-overlay p {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+  }
+  
+  .work-overlay ul {
+    list-style: disc;
+    padding-left: 1.2rem;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+  
+  .work-overlay li {
+    margin-bottom: 6px;
+    line-height: 1.5;
+    word-wrap: break-word;
+  }
+  
+  /* BACK TO TOP BUTTON */
+  .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #0077b6;
+    color: white;
+    border-radius: 50%;
+    padding: 0.6rem 0.8rem;
+    font-size: 1.4rem;
+    text-decoration: none;
+    display: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.8rem;
+    color: #666;
+  }
+  
+  /* RESPONSIVE */
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+  
+    .intro {
+      font-size: 1rem;
+    }
+  
+    .profile-pic.big {
+      width: 150px;
+      height: 150px;
+    }
+  
+    .nav-links a {
+      margin-left: 1rem;
+    }
+  
+    .work-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .edu-card {
+      margin: 1rem;
+    }
+  }
+  /* Fix overlay content overflow */
+.work-overlay {
+    overflow-y: auto;
+  }
+  
+  /* Center logos inside work cards */
+  .logo-center {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  
+.logo-center img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Education layout with right-aligned logos */
+  .edu-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .edu-text {
+    flex: 1 1 60%;
+    min-width: 250px;
+  }
+  
+  .edu-logo-big {
+    max-width: 180px;
+    max-height: 120px;
+    object-fit: contain;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+
+  .edu-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .edu-logo-big {
+    flex-shrink: 0;
+  }
+  
+  /* Gallery of SAS countries */
+  .sas-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .sas-gallery img {
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .sas-gallery img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Make profile image bigger */
+.profile-pic.big {
+    width: 260px;
+    height: 260px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .profile-pic.big {
+      width: 180px;
+      height: 180px;
+    }
+  }
+  
+  /* Fix education logos from being flattened */
+  .edu-logo-big {
+    max-width: 130px;
+    max-height: 100px;
+    object-fit: contain;
+  }
+  
+  /* Work Card: structure & restore overlay */
+  .work-card {
+    position: relative;
+    width: 320px;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .work-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .work-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .work-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: opacity 0.4s ease;
+    overflow-y: auto;
+  }
+  
+  .work-card:hover .work-overlay {
+    opacity: 1;
+  }
+  
+  .work-overlay h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .work-overlay ul {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.95rem;
+  }
+  
+.work-overlay li {
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+  
+  /* Optional: center logos */
+  .logo-center {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  
+  .logo-center img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .map-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 2rem auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
-button:hover {
-    background-color: #218838;
-}
+  .map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .svg-map {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .svg-map:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+  .resume-download {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  .btn {
+    padding: 0.75rem 1.5rem;
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #333;
+  }
+  
+  .svg-overlay {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .svg-overlay .map-point {
+    pointer-events: all;
+  }
+  
+  .svg-overlay circle {
+    cursor: pointer;
+    fill: #0077b6;
+    opacity: 0.9;
+    animation: pulse 2s infinite;
+    transition: fill 0.3s ease;
+  }
+  
+  .svg-overlay circle:hover {
+    fill: #ff6600;
+    opacity: 1;
+  } 
+  
+  .svg-overlay circle {
+    cursor: pointer;
+    fill: #0077b6;
+    opacity: 0.9;
+    animation: pulse 2s infinite;
+    transition: fill 0.3s ease;
+  }
+  
+  .svg-overlay circle:hover {
+    fill: #ff6600;
+    opacity: 1;
+  }
+
+  .map-point text {
+    font-size: 14px;
+    font-weight: bold;
+    text-anchor: middle;
+    fill: #333;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    paint-order: stroke;
+    stroke: white;
+    stroke-width: 3px;
+  }
+
+  .map-overlay {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .map-point:hover text {
+    opacity: 1;
+  }
+
+  .map-point:hover circle {
+    fill: #ff6600;
+  }
+
+  .map-point circle {
+    fill: #0077b6;
+    cursor: pointer;
+    r: 8;
+    animation: pulse 2s infinite;
+    transition: fill 0.3s ease;
+  }
+
+  @keyframes pulse {
+    0% { r: 8; opacity: 0.9; }
+    50% { r: 11; opacity: 0.6; }
+    100% { r: 8; opacity: 0.9; }
+  }
+  
+  .essay-frame {
+    width: 100%;
+    height: 85vh;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  @media screen and (max-width: 768px) {
+    .essay-frame {
+      height: 60vh;
+    }
+  }
