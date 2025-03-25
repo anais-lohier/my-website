@@ -71,4 +71,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
+  // Toggle active state for work cards on tap (for mobile)
+  const workCards = document.querySelectorAll('.work-card');
+  workCards.forEach(card => {
+    card.addEventListener('click', () => {
+      // Remove active class from all work cards (to close others)
+      workCards.forEach(c => c.classList.remove('active'));
+      // Add active class to the tapped card to show its overlay
+      card.classList.add('active');
+    });
+  });
 });
