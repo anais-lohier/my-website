@@ -36,29 +36,43 @@ if (toggleEssay && essayPreview) {
   });
 }
 
-  // 3. Tab switching logic for Cal Poly coursework PDFs with toggle behavior
-  // By default, none of the tab contents have the "active" class, so nothing shows.
-  const tabLinks = document.querySelectorAll('.tab-link');
-  const tabContents = document.querySelectorAll('.tab-content');
+  // 3. Tab switching logic for Cal Poly coursework PDFs WITH dynamic button text
+const tabLinks = document.querySelectorAll('.tab-link');
+const tabContents = document.querySelectorAll('.tab-content');
 
-  tabLinks.forEach(button => {
-    button.addEventListener('click', () => {
-      const tabId = button.getAttribute('data-tab');
-      const targetContent = document.getElementById(tabId);
-      
-      // If the clicked tab is already active, toggle it off (hide content)
-      if (button.classList.contains('active')) {
-        button.classList.remove('active');
-        targetContent.classList.remove('active');
-      } else {
-        // Hide all tabs and then show the clicked one
-        tabLinks.forEach(btn => btn.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
-        button.classList.add('active');
-        targetContent.classList.add('active');
+tabLinks.forEach(button => {
+  const showText = button.getAttribute('data-show-text');
+  const hideText = button.getAttribute('data-hide-text');
+
+  button.addEventListener('click', () => {
+    const tabId = button.getAttribute('data-tab');
+    const targetContent = document.getElementById(tabId);
+
+    if (button.classList.contains('active')) {
+      // If already active, hide it
+      button.classList.remove('active');
+      targetContent.classList.remove('active');
+      button.textContent = showText;
+    } else {
+      // Hide all others
+      tabLinks.forEach(btn => {
+        btn.classList.remove('active');
+        const btnShowText = btn.getAttribute('data-show-text');
+        if (btnShowText) {
+          btn.textContent = btnShowText; 
+        }
+      });
+      tabContents.forEach(content => content.classList.remove('active'));
+
+      // Activate the clicked tab
+      button.classList.add('active');
+      targetContent.classList.add('active');
+      if (hideText) {
+        button.textContent = hideText;
       }
-    });
+    }
   });
+});
 
   // 4. Hamburger menu toggle logic
   const menuToggle = document.querySelector('.menu-toggle');

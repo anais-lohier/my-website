@@ -82,26 +82,56 @@
       <p>Clubs: WIB, SMPP, Phi Sigma Iota, Cal Poly Consulting, Club Volleyball</p>
       <p>Check out my sample coursework below—click the tabs to view each PDF!</p>
     </div>
-    <img src="images/cp.jpg" alt="Cal Poly Logo" class="edu-logo-big" loading="lazy">
+    <img 
+      src="images/cp.jpg" 
+      alt="Cal Poly Logo" 
+      class="edu-logo-big" 
+      loading="lazy"
+    >
   </div>
 
   <!-- Tabs -->
   <div class="tabs">
-    <button class="tab-link" data-tab="paper1">Research Paper</button>
-    <button class="tab-link" data-tab="paper2">Economics Paper</button>
+    <!-- Button 1: CRISPR Paper -->
+    <button
+      class="tab-link"
+      data-tab="paper1"
+      data-show-text="Research Paper"
+      data-hide-text="Hide Research Paper"
+    >
+      Research Paper
+    </button>
+
+    <!-- Button 2: Economics Paper -->
+    <button
+      class="tab-link"
+      data-tab="paper2"
+      data-show-text="Economics Paper"
+      data-hide-text="Hide Economics Paper"
+    >
+      Economics Paper
+    </button>
   </div>
 
   <!-- Tab Content 1 -->
   <div class="tab-content" id="paper1">
     <div class="responsive-pdf-container">
-      <iframe class="essay-frame" src="projects/CRISPR_Research.pdf" allowfullscreen></iframe>
+      <iframe
+        class="essay-frame"
+        src="projects/CRISPR_Research.pdf"
+        allowfullscreen
+      ></iframe>
     </div>
   </div>
 
   <!-- Tab Content 2 -->
   <div class="tab-content" id="paper2">
     <div class="responsive-pdf-container">
-      <iframe class="essay-frame" src="projects/ECON_Research.pdf" allowfullscreen></iframe>
+      <iframe
+        class="essay-frame"
+        src="projects/ECON_Research.pdf"
+        allowfullscreen
+      ></iframe>
     </div>
   </div>
 </div>
