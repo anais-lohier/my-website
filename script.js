@@ -20,37 +20,41 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // 2. Toggle essay preview for Yale essay
-  const toggleEssay = document.getElementById('toggleEssay');
-  const essayPreview = document.getElementById('essayPreview');
-  if (toggleEssay && essayPreview) {
-    toggleEssay.addEventListener('click', (e) => {
-      e.preventDefault();
-      if (essayPreview.style.display === 'none' || essayPreview.style.display === '') {
-        essayPreview.style.display = 'block';
-        toggleEssay.innerText = 'Hide essay';
-      } else {
-        essayPreview.style.display = 'none';
-        toggleEssay.innerText = 'Read my admission essay';
-      }
-    });
-  }
+const toggleEssay = document.getElementById('toggleEssay');
+const essayPreview = document.getElementById('essayPreview');
 
-  // 3. Tab switching logic (for Cal Poly coursework PDFs)
+if (toggleEssay && essayPreview) {
+  toggleEssay.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (essayPreview.style.display === 'none' || essayPreview.style.display === '') {
+      essayPreview.style.display = 'block';
+      toggleEssay.innerText = 'Hide essay';
+    } else {
+      essayPreview.style.display = 'none';
+      toggleEssay.innerText = 'Read my admission essay';
+    }
+  });
+}
+
+  // 3. Tab switching logic for Cal Poly coursework PDFs with toggle behavior
+  // By default, none of the tab contents have the "active" class, so nothing shows.
   const tabLinks = document.querySelectorAll('.tab-link');
   const tabContents = document.querySelectorAll('.tab-content');
 
   tabLinks.forEach(button => {
     button.addEventListener('click', () => {
-      // Remove 'active' from all tab links
-      tabLinks.forEach(btn => btn.classList.remove('active'));
-      // Hide all tab contents
-      tabContents.forEach(content => content.classList.remove('active'));
-      // Mark the clicked tab as active
-      button.classList.add('active');
-      // Show the corresponding tab content
       const tabId = button.getAttribute('data-tab');
       const targetContent = document.getElementById(tabId);
-      if (targetContent) {
+      
+      // If the clicked tab is already active, toggle it off (hide content)
+      if (button.classList.contains('active')) {
+        button.classList.remove('active');
+        targetContent.classList.remove('active');
+      } else {
+        // Hide all tabs and then show the clicked one
+        tabLinks.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+        button.classList.add('active');
         targetContent.classList.add('active');
       }
     });
@@ -73,20 +77,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 6. AOS initialization
+  // 6. AOS (Animate On Scroll) initialization
   AOS.init();
 
   // 7. Toggle active state for map points on click (simulate hover on mobile)
   const mapPoints = document.querySelectorAll('.svg-overlay .map-point');
-  mapPoints.forEach((mapPoint) => {
-    mapPoint.addEventListener('click', function() {
-      // If already active, remove 'active'
+  mapPoints.forEach(mapPoint => {
+    mapPoint.addEventListener('click', () => {
       if (mapPoint.classList.contains('active')) {
         mapPoint.classList.remove('active');
       } else {
-        // Remove 'active' from any other map point
         mapPoints.forEach(mp => mp.classList.remove('active'));
-        // Add 'active' to the clicked map point
         mapPoint.classList.add('active');
       }
     });
@@ -96,9 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const workCards = document.querySelectorAll('.work-card');
   workCards.forEach(card => {
     card.addEventListener('click', () => {
-      // Remove active from all work cards
       workCards.forEach(c => c.classList.remove('active'));
-      // Activate the tapped card
       card.classList.add('active');
     });
   });

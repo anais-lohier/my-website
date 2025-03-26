@@ -706,3 +706,10 @@ body.resume-page {
     margin: 0 !important;
   }
 }
+
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
