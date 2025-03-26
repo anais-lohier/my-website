@@ -335,13 +335,11 @@ footer {
 
   nav .nav-links a {
     display: block !important;
-    width: 100%;               /* Full width in the dropdown */
-    height: auto;              /* Remove the fixed 40px height */
-    margin: 0;                 /* No extra margins */
-    padding: 0.5rem 1rem;    /* Comfortable padding for mobile */
+    width: 100%;    
+    height: auto; 
+    margin: 0;          
+    padding: 0.5rem 1rem;  
     font-size: 0.8rem;
-    
-    /* Match desktop’s base color + border */
     background-color: rgba(255, 255, 255, 0.3);
     border: 1px solid rgba(0, 119, 182, 0.3);
     color: #333;
@@ -349,6 +347,22 @@ footer {
 
     transition: all 0.3s ease;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .edu-card .edu-logo-big {
+    position: absolute;
+    top: 1rem;     /* adjust as needed */
+    right: 1rem;   /* adjust as needed */
+    width: 80px;   /* smaller width on mobile */
+    height: auto;  /* keep aspect ratio */
+  }
+
+  .edu-card .edu-text {
+    margin-right: 90px; /* tweak if your text runs under the logo */
+  }
+
+  .edu-card {
+    position: relative; 
   }
 
   .profile-pic.big {
@@ -377,7 +391,6 @@ footer {
   .essay-frame {
     height: 60vh;
   }
-  
 }
 
 .essay-frame {
@@ -642,4 +655,54 @@ footer {
 
 body.resume-page {
   background: linear-gradient(135deg, #f7f7f7 0%, #ededed 100%) !important;
+}
+
+
+/* Tabs container */
+.tabs {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Tab buttons */
+.tab-link {
+  background: #0077b6; /* or your preferred color */
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.tab-link:hover {
+  background: #005b8a; /* Slightly darker on hover */
+}
+
+/* Active tab button */
+.tab-link.active {
+  background: #005b8a; /* Same color used on hover or a unique highlight */
+}
+
+/* Tab content - hidden by default */
+.tab-content {
+  display: none;
+  margin-top: 1rem;
+}
+
+/* Show the active tab content */
+.tab-content.active {
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  body.resume-page .responsive-pdf-container {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  body.resume-page .responsive-pdf-container iframe {
+    margin: 0 !important;
+  }
 }

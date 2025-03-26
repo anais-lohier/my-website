@@ -4,13 +4,24 @@
   <meta charset="UTF-8">
   <title>Education</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Educational background and achievements of Anaïs Lohier.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="style.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3RJJYN2RMJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3RJJYN2RMJ');
+</script>
 </head>
 <body class="education-page">
-
   <!-- NAV -->
-  <nav>
+  <nav role="navigation">
     <div class="nav-left">Anaïs Lohier</div>
     <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
     <div class="nav-links">
@@ -22,41 +33,76 @@
     </div>
   </nav>
   
-
-<h1 class="page-title" data-aos="fade-down">Education</h1>
-
-<!-- Yale -->
+  <main id="main-content">
+    <h1 class="page-title" data-aos="fade-down">Education</h1>
+  
+    <!-- Yale -->
+    <div class="edu-card" data-aos="fade-up">
+      <div class="edu-flex">
+        <div class="edu-text">
+          <h2>Exciting News Coming Soon!</h2>
+          <p>2025 - 2027</p>
+          <p>Incoming MS in Biomedical Informatics</p>
+          <a href="#" id="toggleEssay">Read my admission essay</a>
+          <p>Want to read the full essay? <a href="mailto:alohier21@gmail.com">Send me an email!</a></p>
+        </div>
+        <img src="images/yale.jpg" alt="Yale Logo" class="edu-logo-big" loading="lazy">
+      </div>
+      <div id="essayPreview" style="display: none; margin-top: 1rem;">
+        <div class="responsive-pdf-container">
+          <iframe class="essay-frame" src="projects/yale_essay.pdf" allowfullscreen></iframe>
+        </div> 
+      </div>
+    </div>
+  
+<!-- Cal Poly -->
 <div class="edu-card" data-aos="fade-up">
   <div class="edu-flex">
-    <div class="edu-text">
-      <h2>Exciting News Coming Soon!</h2>
-      <p>2025 - 2027</p>
-      <p>Incoming MS in Biomedical Informatics </p>
-      <a href="#" id="toggleEssay">Read my admission essay</a>
-      <p>
-        Want to read the full essay? <a href="mailto:alohier21@gmail.com">Send me an email!</a>
-      </p>
-    </div>
-      <img src="images/yale.jpg" alt="Yale Logo" class="edu-logo-big"> 
-  </div>
-  <div id="essayPreview" style="display: none; margin-top: 1rem;">
-    <div class="responsive-pdf-container">
-      <iframe class="essay-frame" src="projects/yale_essay.pdf" allowfullscreen></iframe>
-    </div> 
-  </div> 
-</div>
-
-  <!-- Cal Poly -->
-  <div class="edu-card edu-flex" data-aos="fade-up">
     <div class="edu-text">
       <h2>Cal Poly, San Luis Obispo</h2>
       <p>2022 - 2025</p>
       <p>B.S. in Business Administration (Quantitative Analysis)</p>
       <p>Minors: Biology & French</p>
       <p>Clubs: WIB, SMPP, Phi Sigma Iota, Cal Poly Consulting, Club Volleyball</p>
+      <p>Check out my sample coursework below—click the tabs to view each PDF!</p>
     </div>
-    <img src="images/cp.jpg" alt="Cal Poly Logo" class="edu-logo-big">
+    <img
+      src="images/cp.jpg"
+      alt="Cal Poly Logo"
+      class="edu-logo-big"
+      loading="lazy"
+    >
   </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-link active" data-tab="paper1">CRISPR Research</button>
+    <button class="tab-link" data-tab="paper2">Econometrics Research</button>
+  </div>
+
+  <!-- Tab Content 1 -->
+  <div class="tab-content active" id="paper1">
+    <div class="responsive-pdf-container">
+      <iframe
+        class="essay-frame"
+        src="projects/CRISPR_Research.pdf"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- Tab Content 2 -->
+  <div class="tab-content" id="paper2">
+    <div class="responsive-pdf-container">
+      <iframe
+        class="essay-frame"
+        src="projects/ECON_Research.pdf"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
+
 
  <!-- Semester at Sea -->
 <div class="edu-card" data-aos="fade-up">
@@ -68,7 +114,6 @@
       <p>Hover over the map to explore where I traveled 🌍</p>
       <div class="map-container" style="position: relative;">
         <img src="images/world_map.jpg" alt="World Map" style="width: 100%; display: block;" />
-        
         <svg class="svg-overlay" viewBox="0 0 1000 563" style="position: absolute; top: 0; left: 0; width: 100%; height: auto;">
           <g class="map-point" transform="translate(482,210)">
             <circle r="8" />
@@ -125,15 +170,23 @@
   </div>
 </div>
 
-  <!-- Back to Top -->
-  <a href="#" class="back-to-top">↑</a>
+ <!-- Back to Top -->
+ <a href="#" class="back-to-top">↑</a>
+</main>
 
-  <footer>
-    <p>© 2025 Anaïs Lohier</p>
-  </footer>
+<footer>
+  <p>© 2025 Anaïs Lohier</p>
+</footer>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="script.js"></script>
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+  const scrollBtn = document.querySelector('.back-to-top');
+  window.addEventListener('scroll', () => {
+    scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+  });
+</script>
+<script src="script.js"></script>
 </body>
 </html>

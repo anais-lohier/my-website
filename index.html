@@ -4,12 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anaïs Lohier</title>
+  <meta name="description" content="Anaïs Lohier - Bridging biology, machine learning, and global health.">
+  <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3RJJYN2RMJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3RJJYN2RMJ');
+</script>
 </head>
 <body>
+
   <!-- NAV BAR -->
-  <nav>
+  <nav role="navigation">
     <div class="nav-left">Anaïs Lohier</div>
     <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
     <div class="nav-links">
@@ -21,45 +33,58 @@
     </div>
   </nav>
   
-<!-- HEADER -->
-<header class="hero">
-  <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic big">
-  <h1>Hi, I'm Anaïs</h1>
-  <p class="intro">Bridging biology, machine learning, and global health to reimagine patient care. Yale-bound bioinformatician with a mission to make healthcare smarter, faster, and more equitable.</p>
-</header>
+  <main id="main-content">
+    <!-- HEADER -->
+    <header class="hero">
+      <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic big" loading="lazy">
+      <h1>Hi, I'm Anaïs</h1>
+      <p class="intro">
+        Bridging biology, machine learning, and global health to reimagine patient care.
+        Emerging Bioinformatician with a mission to make healthcare smarter, faster, and more equitable.
+      </p>
+    </header>
+    
+    <!-- ABOUT + CONTACT -->
+    <div class="container">
+      <section id="about" data-aos="fade-up">
+        <h2>About Me</h2>
+        <p>
+          Hello! I am a third-year student at Cal Poly majoring in Business Administration with a concentration in Quantitative Analysis and minors in Biology and French.
+          I plan on graduating in June 2025 and will be pursuing a Master's in Bioinformatics in the coming Fall.
+          Through my coursework, I've developed strong analytical and technical skills that I hope to apply to the healthcare and data science fields.
+        </p>
+        <p>
+          Outside of academics, I mentor with Women in Business and am a member of the Phi Sigma Iota Honor Society.
+          In my free time, I explore amateur botany and enjoy the strategic challenge of escape rooms.
+        </p>
+      </section>
+    
+      <section id="contact" data-aos="fade-up">
+        <h2>Let's Connect!</h2>
+        <p>Email: <a href="mailto:alohier21@gmail.com">alohier21@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/anaislohier9323" target="_blank">linkedin.com/in/anaislohier9323</a></p>
+      </section>
+    </div>
 
-<!-- ABOUT + CONTACT wrapped in container -->
-<div class="container">
-  <!-- ABOUT -->
-  <section id="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>Hello! I am a third-year student at Cal Poly majoring in Business Administration with a concentration in Quantitative Analysis and minors in Biology and French. I plan on graduating in June 2025 and will be pursuing a Master's in Bioinformatics at Yale University. Through my coursework, I've developed strong analytical and technical skills that I hope to apply to the healthcare and data science fields.</p>
-    <p>Outside of academics, I mentor with Women in Business and am a member of the Phi Sigma Iota Honor Society. In my free time, I explore amateur botany and enjoy the strategic challenge of escape rooms.</p>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" data-aos="fade-up">
-    <h2>Let's Connect!</h2>
-    <p>Email: <a href="mailto:alohier21@gmail.com">alohier21@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/anaislohier9323" target="_blank">linkedin.com/in/anaislohier9323</a></p>
-  </section>
-</div> 
-
-<!-- BACK TO TOP -->
-<a href="#" class="back-to-top">↑</a>
-
-<footer>
-  <p>© 2025 Anaïs Lohier</p>
-</footer>
-
-<!-- SCRIPTS -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
-  const scrollBtn = document.querySelector('.back-to-top');
-  window.addEventListener('scroll', () => {
-    scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-  });
-</script>
-<script src="script.js"></script>
-
+    
+  </main>
+  
+  <!-- BACK TO TOP -->
+  <a href="#" class="back-to-top">↑</a>
+  
+  <footer>
+    <p>© 2025 Anaïs Lohier</p>
+  </footer>
+  
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    const scrollBtn = document.querySelector('.back-to-top');
+    window.addEventListener('scroll', () => {
+      scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

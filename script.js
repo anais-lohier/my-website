@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // SAS Map hover functionality (if applicable)
+  // 1. SAS Map hover functionality (if applicable)
   const sasMap = document.getElementById("sas-map");
   if (sasMap) {
     sasMap.addEventListener("mouseover", () => {
@@ -14,13 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
           <li>Morocco 🇲🇦</li>
         </ul>`;
     });
-  
     sasMap.addEventListener("mouseout", () => {
       sasMap.innerHTML = "Hover to see destinations ✈️";
     });
   }
-  
-  // Toggle essay preview for Yale essay
+
+  // 2. Toggle essay preview for Yale essay
   const toggleEssay = document.getElementById('toggleEssay');
   const essayPreview = document.getElementById('essayPreview');
   if (toggleEssay && essayPreview) {
@@ -35,8 +34,29 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
-  
-  // Hamburger menu toggle logic
+
+  // 3. Tab switching logic (for Cal Poly coursework PDFs)
+  const tabLinks = document.querySelectorAll('.tab-link');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabLinks.forEach(button => {
+    button.addEventListener('click', () => {
+      // Remove 'active' from all tab links
+      tabLinks.forEach(btn => btn.classList.remove('active'));
+      // Hide all tab contents
+      tabContents.forEach(content => content.classList.remove('active'));
+      // Mark the clicked tab as active
+      button.classList.add('active');
+      // Show the corresponding tab content
+      const tabId = button.getAttribute('data-tab');
+      const targetContent = document.getElementById(tabId);
+      if (targetContent) {
+        targetContent.classList.add('active');
+      }
+    });
+  });
+
+  // 4. Hamburger menu toggle logic
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
   if (menuToggle && navLinks) {
@@ -44,41 +64,41 @@ document.addEventListener("DOMContentLoaded", () => {
       navLinks.classList.toggle('active');
     });
   }
-  
-  // Scroll-to-top functionality
+
+  // 5. Scroll-to-top button functionality
   const scrollBtn = document.querySelector('.back-to-top');
   window.addEventListener('scroll', () => {
     if (scrollBtn) {
       scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
     }
   });
-  
-  // AOS initialization
+
+  // 6. AOS initialization
   AOS.init();
-  
-  // Toggle active state for map points on click (simulate hover on mobile)
+
+  // 7. Toggle active state for map points on click (simulate hover on mobile)
   const mapPoints = document.querySelectorAll('.svg-overlay .map-point');
   mapPoints.forEach((mapPoint) => {
     mapPoint.addEventListener('click', function() {
-      // If already active, remove the active class.
+      // If already active, remove 'active'
       if (mapPoint.classList.contains('active')) {
         mapPoint.classList.remove('active');
       } else {
-        // Remove active class from any other map point.
+        // Remove 'active' from any other map point
         mapPoints.forEach(mp => mp.classList.remove('active'));
-        // Add active class to the clicked map point.
+        // Add 'active' to the clicked map point
         mapPoint.classList.add('active');
       }
     });
   });
 
-  // Toggle active state for work cards on tap (for mobile)
+  // 8. Toggle active state for work cards on tap (for mobile)
   const workCards = document.querySelectorAll('.work-card');
   workCards.forEach(card => {
     card.addEventListener('click', () => {
-      // Remove active class from all work cards (to close others)
+      // Remove active from all work cards
       workCards.forEach(c => c.classList.remove('active'));
-      // Add active class to the tapped card to show its overlay
+      // Activate the tapped card
       card.classList.add('active');
     });
   });
