@@ -28,10 +28,10 @@ if (toggleEssay && essayPreview) {
     e.preventDefault();
     if (essayPreview.style.display === 'none' || essayPreview.style.display === '') {
       essayPreview.style.display = 'block';
-      toggleEssay.innerText = 'Hide essay';
+      toggleEssay.innerText = 'Hide Admission Essay';
     } else {
       essayPreview.style.display = 'none';
-      toggleEssay.innerText = 'Read my admission essay';
+      toggleEssay.innerText = 'Admission Essay';
     }
   });
 }
