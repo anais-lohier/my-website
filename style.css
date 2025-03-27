@@ -413,8 +413,7 @@ footer {
 
 .map-container {
   width: 100%;
-  max-width: 1000px;
-  margin: 2rem auto;
+  margin: 1rem auto;
   border-radius: 16px;
   overflow: hidden;
   position: relative;
@@ -712,4 +711,27 @@ body.resume-page {
 }
 .tab-content.active {
   display: block;
+}
+
+.full-bleed {
+  display: block;
+  width: clamp(250px, 80vw, 900px);
+  margin: 1rem auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+.full-bleed .map-image {
+  width: 100% !important;
+  height: auto !important;
+  text-align: center !important;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 768px) {
+  .full-bleed {
+    width: 80vw;        /* Slightly narrower than 90vw for a balanced look */
+    max-width: 900px;   /* Could allow up to 900px wide on desktop */
+    margin: 2rem auto;
+  }
 }
