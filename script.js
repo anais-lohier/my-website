@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. Toggle essay preview for Yale essay
+   // 2. Toggle essay preview for Yale essay
 const toggleEssay = document.getElementById('toggleEssay');
 const essayPreview = document.getElementById('essayPreview');
 
@@ -107,12 +107,36 @@ tabLinks.forEach(button => {
     });
   });
 
-  // 8. Toggle active state for work cards on tap (for mobile)
+  // 8. Toggle active state for work cards on tap (for mobile) or click (for non-touch devices)
   const workCards = document.querySelectorAll('.work-card');
-  workCards.forEach(card => {
-    card.addEventListener('click', () => {
-      workCards.forEach(c => c.classList.remove('active'));
-      card.classList.add('active');
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  
+  if (isTouchDevice) {
+    workCards.forEach(card => {
+      card.addEventListener('touchend', function(e) {
+        e.preventDefault(); // Prevent the simulated mouse events
+        // Toggle active state on touch
+        if (this.classList.contains('active')) {
+          this.classList.remove('active');
+        } else {
+          // Optionally, remove active from all cards if you want only one open at a time:
+          workCards.forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+        }
+      });
     });
-  });
+  } else {
+    workCards.forEach(card => {
+      card.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Toggle active state on click
+        if (this.classList.contains('active')) {
+          this.classList.remove('active');
+        } else {
+          workCards.forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+        }
+      });
+    });
+  }
 });
