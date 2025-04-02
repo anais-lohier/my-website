@@ -455,7 +455,7 @@ footer {
 }
 
 .map-point text {
-  font-size: 30px;
+  font-size: 26px;
   font-weight: bold;
   text-anchor: middle;
   fill: #333;
@@ -741,4 +741,3 @@ nav a.nav-left:hover {
   color: #000 !important;
   text-decoration: none;
 }
-
