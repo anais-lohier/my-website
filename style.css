@@ -741,3 +741,10 @@ nav a.nav-left:hover {
   color: #000 !important;
   text-decoration: none;
 }
+
+
+.linkedin-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
