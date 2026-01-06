@@ -36,39 +36,100 @@
   <main id="main-content">
     <h1 class="page-title" data-aos="fade-down">Education</h1>
   
-    <!-- Yale -->
-    <div class="edu-card" data-aos="fade-up">
-      <div class="edu-flex">
-        <div class="edu-text">
-          <h2>Yale University</h2>
-          <p>2025 - 2027</p>
-          <p>Incoming MSc in Bioinformatics</p>
-          <p>Curious about my admission journey? Here’s a short preview of my admission essay.</p>
-          <p>
-            For the full version,
-            <a href="mailto:alohier21@gmail.com">send me an email!</a>
-          </p>
-          <button class="tab-link" id="toggleEssay">
-            Admission Essay
-          </button>
-        </div>
-        <img
-          src="images/yale.jpg"
-          alt="Yale Logo"
-          class="edu-logo-big"
-          loading="lazy"
-        >
-      </div>
-      
-      <div id="essayPreview" style="display: none; margin-top: 1rem;">
-        <div class="responsive-pdf-container">
-          <iframe
-            class="essay-frame"
-            src="projects/admission_essay.pdf#zoom=page-width"
-          ></iframe>
-        </div>
-      </div>
+<!-- Yale -->
+<div class="edu-card" data-aos="fade-up">
+  <div class="edu-flex">
+    <div class="edu-text">
+      <h2>Yale University</h2>
+      <p>2025 - 2027</p>
+      <p>M.Sc. in Health Informatics</p>
+      <p>Selected academic work:</p>
     </div>
+
+    <img
+      src="images/yale.jpg"
+      alt="Yale Logo"
+      class="edu-logo-big"
+      loading="lazy"
+    >
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button
+      class="tab-link"
+      data-tab="yale-thermometry"
+      data-show-text="The Significance of 37 °C"
+      data-hide-text="Hide Essay"
+    >
+      The Significance of 37 °C
+    </button>
+
+    <button
+      class="tab-link"
+      data-tab="yale-healthreach"
+      data-show-text="HealthReach Web App"
+      data-hide-text="Hide HealthReach"
+    >
+      HealthReach Web App
+    </button>
+
+    <button
+      class="tab-link"
+      data-tab="yale-admission"
+      data-show-text="Admission Essay"
+      data-hide-text="Hide Admission Essay"
+    >
+      Admission Essay
+    </button>
+  </div>
+
+  <!-- Thermometry Essay -->
+  <div class="tab-content" id="yale-thermometry">
+
+    <div class="responsive-pdf-container">
+      <iframe
+        class="essay-frame"
+        src="projects/thermometry_essay.pdf#zoom=page-width"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+
+  <!-- HealthReach -->
+  <div class="tab-content" id="yale-healthreach">
+    <p>An interactive Flask + Plotly application visualizing cost-related barriers to healthcare access (1997-2019), with subgroup filtering and Euler-based trend projections.</p>
+
+    <img
+      src="images/healthreach_preview.png"
+      alt="HealthReach Web App Preview"
+      loading="lazy"
+      style="width: 100%; border-radius: 12px; margin-top: 0.5rem;"
+    >
+
+    <p>
+      <a href="https://github.com/anais-lohier/compmethods-aml276" target="_blank" rel="noopener">
+        View Full Project on GitHub
+      </a>
+    </p>
+  </div>
+
+  <!-- Admission Essay -->
+  <div class="tab-content" id="yale-admission">
+    <p>
+      Curious about my admission journey? Here’s a short preview of my admission essay.
+      For the full version, <a href="mailto:alohier21@gmail.com">send me an email!</a>
+    </p>
+
+    <div class="responsive-pdf-container">
+      <iframe
+        class="essay-frame"
+        src="projects/admission_essay.pdf#zoom=page-width"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
   
 <!-- Cal Poly Section -->
 <div class="edu-card" data-aos="fade-up">
@@ -79,7 +140,7 @@
       <p>B.S. in Business Administration (Quantitative Analysis)</p>
       <p>Minors: Biology & French</p>
       <p>Clubs: WIB, SMPP, Phi Sigma Iota, Cal Poly Consulting, Club Volleyball</p>
-      <p>Check out my sample coursework below—click the tabs to view each PDF!</p>
+      <p>Selected academic work:</p>
     </div>
     <img 
       src="images/cp.jpg" 
