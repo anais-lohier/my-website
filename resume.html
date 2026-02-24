@@ -1,73 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>My Resume</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Professional resume of Anaïs Lohier detailing work, education, and skills.">
+  <meta charset="UTF-8"/>
+  <title>Resume — Anaïs Lohier</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/png" href="images/favicon.png">
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3RJJYN2RMJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-3RJJYN2RMJ');
-</script>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3RJJYN2RMJ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3RJJYN2RMJ');</script>
+  <style>
+    .resume-hero-strip {
+      background: transparent;
+      padding: 3rem 2.5rem 2rem;
+    }
+    .resume-hero-strip h1 { color: #fff; text-shadow: 0 2px 20px rgba(0,0,0,0.5); }
+    .resume-hero-strip p { color: var(--parchment); }
+    .resume-frame-card { box-shadow: 0 20px 80px rgba(0,0,0,0.5); }
+    .resume-topbar { background: rgba(245,242,235,0.96); }
+    footer { border-top-color: rgba(255,255,255,0.1) !important; color: rgba(255,255,255,0.25) !important; }
+  </style>
 </head>
-
 <body class="resume-page">
-  <!-- NAV -->
-  <nav role="navigation">
-    <a href="index.html" class="nav-left">Anaïs Lohier</a>
-    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-    <div class="nav-links">
-      <a href="index.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Home</a>
-      <a href="work.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Work</a>
-      <a href="education.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Education</a>
-      <a href="resume.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Resume</a>
-      <a href="connect.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Let's Connect</a>
-    </div>
-  </nav>
-  
-  <main id="main-content">
-    <!-- Resume Title -->
-    <h1 class="page-title" data-aos="fade-down">Resume</h1>
-    
-    <!-- Resume Viewer -->
-    <div class="edu-card" data-aos="fade-up">
-      <div class="edu-flex">
-        <div>
-          <p>Want a closer look at my experience? Feel free to download it!</p>
-          <a href="projects/anais_lohier_resume.pdf" download class="button-download">⬇️ Download PDF</a>
-        </div>
+
+<nav>
+  <a href="index.html" class="nav-left">Anaïs Lohier</a>
+  <button class="menu-toggle">☰</button>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="education.html">Education</a>
+    <a href="resume.html">Resume</a>
+    <a href="connect.html">Let's Connect</a>
+  </div>
+</nav>
+
+<div class="resume-hero-strip" style="display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;">
+  <div>
+    <h1 style="font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4rem);font-style:italic;letter-spacing:-0.02em;">Résumé</h1>
+    <p style="font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:0.5rem;">Last updated · February 2026</p>
+  </div>
+  <a href="projects/anais_lohier_resume.pdf" download class="btn btn-navy" style="align-self:flex-end;background:rgba(255,255,255,0.12);border-color:rgba(255,255,255,0.25);color:#fff;">↓ Download PDF</a>
+</div>
+
+<div class="resume-wrap">
+  <div class="resume-frame-card">
+    <div class="resume-topbar">
+      <div class="resume-dots">
+        <span style="background:#ff5f57;"></span>
+        <span style="background:#febc2e;"></span>
+        <span style="background:#28c840;"></span>
       </div>
-  
-      <!-- Inline PDF Preview -->
-      <div class="responsive-pdf-container">
-        <iframe src="projects/anais_lohier_resume.pdf" width="100%" height="600px" style="margin-top: 1rem;"></iframe>
-      </div>
-  
-      <!-- Back to Top -->
-      <a href="#" class="back-to-top">↑</a>
+      <span style="font-family:'Space Mono',monospace;font-size:0.62rem;color:var(--ink-light);letter-spacing:0.04em;">AnaisLohier_Resume.pdf</span>
+      <a href="projects/anais_lohier_resume.pdf" download style="font-family:'Space Mono',monospace;font-size:0.65rem;color:var(--steel);">↓ save</a>
     </div>
-  </main>
-  
-  <footer>
-    <p>© 2025 Anaïs Lohier</p>
-  </footer>
-  
-  <!-- SCRIPTS -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-    const scrollBtn = document.querySelector('.back-to-top');
-    window.addEventListener('scroll', () => {
-      scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
-  </script>
-  <script src="script.js"></script>
+    <iframe src="projects/anais_lohier_resume.pdf" title="Anaïs Lohier Resume"></iframe>
+  </div>
+</div>
+
+<footer><p>© 2026 Anaïs Lohier</p></footer>
+
+<script>
+  document.querySelector('.menu-toggle').addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.toggle('active');
+  });
+</script>
 </body>
 </html>

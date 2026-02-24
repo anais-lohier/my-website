@@ -2,283 +2,262 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Education</title>
+  <title>Education — Anaïs Lohier</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Educational background and achievements of Anaïs Lohier.">
   <link rel="icon" type="image/png" href="images/favicon.png">
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-3RJJYN2RMJ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-3RJJYN2RMJ');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3RJJYN2RMJ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-3RJJYN2RMJ');</script>
+  <style>
+    /* ── VOYAGE — compact grid ── */
+    .voyage-wrap {
+      margin-top: 1.2rem;
+      border: 1px solid rgba(30,49,73,0.15);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: linear-gradient(160deg, #0D1B2A 0%, #1A2E44 50%, #0A1628 100%);
+      padding: 1.4rem 1.6rem 1.2rem;
+    }
+    .voyage-header {
+      display: flex; align-items: baseline; justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+    .voyage-header h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem; font-style: italic; color: #fff;
+    }
+    .voyage-header span {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.52rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(255,255,255,0.3);
+    }
+    .voyage-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.5rem;
+    }
+    @media (max-width: 600px) {
+      .voyage-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .voyage-stop {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.55rem 0.65rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 8px;
+      transition: all 0.2s;
+      cursor: default;
+    }
+    .voyage-stop:hover {
+      background: rgba(216,203,154,0.08);
+      border-color: rgba(216,203,154,0.25);
+    }
+    .voyage-num {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: rgba(216,203,154,0.12);
+      border: 1px solid rgba(216,203,154,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.45rem; font-weight: 700; color: var(--parchment);
+      flex-shrink: 0;
+    }
+    .voyage-stop:first-child .voyage-num,
+    .voyage-stop:last-child .voyage-num {
+      background: var(--parchment); color: var(--navy); border-color: var(--parchment);
+    }
+    .voyage-city {
+      font-size: 0.75rem; font-weight: 500; color: #fff; line-height: 1.2;
+    }
+    .voyage-country {
+      font-size: 0.6rem; color: rgba(255,255,255,0.35);
+    }
+    .voyage-flag { font-size: 0.85rem; margin-left: auto; flex-shrink: 0; }
+  </style>
 </head>
 <body class="education-page">
-  <!-- NAV -->
-  <nav role="navigation">
-    <a href="index.html" class="nav-left">Anaïs Lohier</a>
-    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-    <div class="nav-links">
-      <a href="index.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Home</a>
-      <a href="work.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Work</a>
-      <a href="education.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Education</a>
-      <a href="resume.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Resume</a>
-      <a href="connect.html" onclick="document.querySelector('.nav-links').classList.remove('active')">Let's Connect</a>
-    </div>
-  </nav>
-  
-  <main id="main-content">
-    <h1 class="page-title" data-aos="fade-down">Education</h1>
-  
-<!-- Yale -->
-<div class="edu-card" data-aos="fade-up">
-  <div class="edu-flex">
-    <div class="edu-text">
-      <h2>Yale University</h2>
-      <p>2025 - 2027</p>
-      <p>M.Sc. in Health Informatics</p>
-      <p>Selected academic work:</p>
-    </div>
-
-    <img
-      src="images/yale.jpg"
-      alt="Yale Logo"
-      class="edu-logo-big"
-      loading="lazy"
-    >
+<nav>
+  <a href="index.html" class="nav-left">Anaïs Lohier</a>
+  <button class="menu-toggle">☰</button>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="work.html">Work</a>
+    <a href="education.html">Education</a>
+    <a href="resume.html">Resume</a>
+    <a href="connect.html">Let's Connect</a>
   </div>
+</nav>
 
-  <!-- Tabs -->
-  <div class="tabs">
-    <button
-      class="tab-link"
-      data-tab="yale-thermometry"
-      data-show-text="The Significance of 37 °C"
-      data-hide-text="Hide Essay"
-    >
-      The Significance of 37 °C
-    </button>
-
-    <button
-      class="tab-link"
-      data-tab="yale-healthreach"
-      data-show-text="HealthReach Web App"
-      data-hide-text="Hide HealthReach"
-    >
-      HealthReach Web App
-    </button>
-
-    <button
-      class="tab-link"
-      data-tab="yale-admission"
-      data-show-text="Admission Essay"
-      data-hide-text="Hide Admission Essay"
-    >
-      Admission Essay
-    </button>
-  </div>
-
-  <!-- Thermometry Essay -->
-  <div class="tab-content" id="yale-thermometry">
-
-    <div class="responsive-pdf-container">
-      <iframe
-        class="essay-frame"
-        src="projects/thermometry_essay.pdf#zoom=page-width"
-        allowfullscreen
-      ></iframe>
-    </div>
-  </div>
-
-  <!-- HealthReach -->
-  <div class="tab-content" id="yale-healthreach">
-    <p>An interactive Flask + Plotly application visualizing cost-related barriers to healthcare access (1997-2019), with subgroup filtering and Euler-based trend projections.</p>
-
-    <img
-      src="images/healthreach_preview.png"
-      alt="HealthReach Web App Preview"
-      loading="lazy"
-      style="width: 100%; border-radius: 12px; margin-top: 0.5rem;"
-    >
-
-    <p>
-      <a href="https://github.com/anais-lohier/compmethods-aml276" target="_blank" rel="noopener">
-        View Full Project on GitHub
-      </a>
-    </p>
-  </div>
-
-  <!-- Admission Essay -->
-  <div class="tab-content" id="yale-admission">
-    <p>
-      Curious about my admission journey? Here’s a short preview of my admission essay.
-      For the full version, <a href="mailto:alohier21@gmail.com">send me an email!</a>
-    </p>
-
-    <div class="responsive-pdf-container">
-      <iframe
-        class="essay-frame"
-        src="projects/admission_essay.pdf#zoom=page-width"
-        allowfullscreen
-      ></iframe>
-    </div>
-  </div>
-</div>
-  
-<!-- Cal Poly Section -->
-<div class="edu-card" data-aos="fade-up">
-  <div class="edu-flex">
-    <div class="edu-text">
-      <h2>Cal Poly, San Luis Obispo</h2>
-      <p>2022 - 2025</p>
-      <p>B.S. in Business Administration (Quantitative Analysis)</p>
-      <p>Minors: Biology & French</p>
-      <p>Clubs: WIB, SMPP, Phi Sigma Iota, Cal Poly Consulting, Club Volleyball</p>
-      <p>Selected academic work:</p>
-    </div>
-    <img 
-      src="images/cp.jpg" 
-      alt="Cal Poly Logo" 
-      class="edu-logo-big" 
-      loading="lazy"
-    >
-  </div>
-
-  <!-- Tabs -->
-  <div class="tabs">
-    <!-- Button 1: CRISPR Paper -->
-    <button
-      class="tab-link"
-      data-tab="paper1"
-      data-show-text="Research Paper"
-      data-hide-text="Hide Research Paper"
-    >
-      Research Paper
-    </button>
-
-    <!-- Button 2: Economics Paper -->
-    <button
-      class="tab-link"
-      data-tab="paper2"
-      data-show-text="Economics Paper"
-      data-hide-text="Hide Economics Paper"
-    >
-      Economics Paper
-    </button>
-  </div>
-
-  <!-- Tab Content 1 -->
-  <div class="tab-content" id="paper1">
-    <div class="responsive-pdf-container">
-      <iframe
-        class="essay-frame"
-        src="projects/CRISPR_Research.pdf#zoom=page-width"
-        allowfullscreen
-      ></iframe>
-    </div>
-  </div>
-
-  <!-- Tab Content 2 -->
-  <div class="tab-content" id="paper2">
-    <div class="responsive-pdf-container">
-      <iframe
-        class="essay-frame"
-        src="projects/ECON_Research.pdf#zoom=page-width"
-        allowfullscreen
-      ></iframe>
-    </div>
-  </div>
+<div class="page-header" data-aos="fade-down">
+  <p class="page-header-tag">Academic Journey</p>
+  <h1>Education</h1>
 </div>
 
- <!-- Semester at Sea -->
-<div class="edu-card" data-aos="fade-up">
-  <div class="edu-flex">
-    <div class="edu-text">
-      <h2>Semester at Sea</h2>
-      <p>Fall 2023</p>
-      <p>Traveled across 11 countries while continuing university coursework aboard a ship-based campus.</p>
-      <p>Hover over the map to explore where I traveled 🌍</p>
-      <div class="map-container full-bleed">  
-              <img src="images/world_map.jpg" alt="World Map" style="width: 100%; display: block;" />
-        <svg class="svg-overlay" viewBox="0 0 1000 563" style="position: absolute; top: 0; left: 0; width: 100%; height: auto;">
-          <g class="map-point" transform="translate(482,210)">
-            <circle r="8" />
-            <text dy="-12">Antwerp</text>
-          </g>
-          <g class="map-point" transform="translate(490,240)">
-            <circle r="8" />
-            <text dy="-12">Barcelona</text>
-          </g>
-          <g class="map-point" transform="translate(500,260)">
-            <circle r="8" />
-            <text dy="-12">Malta</text>
-          </g>
-          <g class="map-point" transform="translate(530,265)">
-            <circle r="8" />
-            <text dy="-12">Greece</text>
-          </g>
-          <g class="map-point" transform="translate(450,255)">
-            <circle r="8" />
-            <text dy="-12">Gibraltar</text>
-          </g>
-          <g class="map-point" transform="translate(470,255)">
-            <circle r="8" />
-            <text dy="-12">Malaga</text>
-          </g>
-          <g class="map-point" transform="translate(435,280)">
-            <circle r="8" />
-            <text dy="-12">Canary Islands</text>
-          </g>
-          <g class="map-point" transform="translate(520,470)">
-            <circle r="8" />
-            <text dy="-12">South Africa</text>
-          </g>
-          <g class="map-point" transform="translate(650,430)">
-            <circle r="8" />
-            <text dy="-12">Mauritius</text>
-          </g>
-          <g class="map-point" transform="translate(750,350)">
-            <circle r="8" />
-            <text dy="-12">Malaysia</text>
-          </g>
-          <g class="map-point" transform="translate(770,340)">
-            <circle r="8" />
-            <text dy="-12">Vietnam</text>
-          </g>
-          <g class="map-point" transform="translate(770,375)">
-            <circle r="8" />
-            <text dy="-12">Thailand</text>
-          </g>
-        </svg>
+<div class="edu-wrap">
+
+  <!-- Yale -->
+  <div class="edu-card" data-aos="fade-up">
+    <div class="edu-flex">
+      <div class="edu-text">
+        <h2>Yale University</h2>
+        <p class="edu-date">2025 — 2027 · New Haven, CT</p>
+        <p>M.Sc. in Public Health, Concentration in Health Informatics</p>
+        <p style="margin-top:0.4rem;">Selected academic work:</p>
+      </div>
+      <img src="images/yale.jpg" alt="Yale" class="edu-logo-big">
+    </div>
+    <div class="tabs">
+      <button class="tab-link" data-tab="yale-thermometry" data-show-text="The Significance of 37°C" data-hide-text="Hide">The Significance of 37°C</button>
+      <button class="tab-link" data-tab="yale-healthreach" data-show-text="HealthReach Web App" data-hide-text="Hide">HealthReach Web App</button>
+      <button class="tab-link" data-tab="yale-admission" data-show-text="Admission Essay" data-hide-text="Hide">Admission Essay</button>
+    </div>
+    <div class="tab-content" id="yale-thermometry">
+      <div class="responsive-pdf-container"><iframe src="projects/thermometry_essay.pdf#zoom=page-width" allowfullscreen></iframe></div>
+    </div>
+    <div class="tab-content" id="yale-healthreach">
+      <p style="margin-bottom:0.75rem;font-size:0.9rem;color:var(--ink-mid);">A Flask + Plotly application visualizing cost-related barriers to healthcare access (1997–2019), with subgroup filtering and Euler-based trend projections.</p>
+      <img src="images/healthreach_preview.png" alt="HealthReach" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--border);">
+      <p style="margin-top:0.75rem;font-size:0.85rem;"><a href="https://github.com/anais-lohier/compmethods-aml276" target="_blank" rel="noopener">View on GitHub →</a></p>
+    </div>
+    <div class="tab-content" id="yale-admission">
+      <p style="margin-bottom:0.75rem;font-size:0.9rem;color:var(--ink-mid);">Curious about my admission journey? Here's a preview — for the full version, <a href="mailto:anais.lohier@yale.edu">email me!</a></p>
+      <div class="responsive-pdf-container"><iframe src="projects/admission_essay.pdf#zoom=page-width" allowfullscreen></iframe></div>
+    </div>
+  </div>
+
+  <!-- Cal Poly -->
+  <div class="edu-card" data-aos="fade-up">
+    <div class="edu-flex">
+      <div class="edu-text">
+        <h2>Cal Poly, San Luis Obispo</h2>
+        <p class="edu-date">2022 — 2025 · San Luis Obispo, CA</p>
+        <p>B.S. in Business Administration (Quantitative Analysis)</p>
+        <p>Minors: Biology &amp; French</p>
+        <p>Clubs: WIB, SMPP, Phi Sigma Iota, Cal Poly Consulting, Club Volleyball</p>
+        <p style="margin-top:0.4rem;">Selected academic work:</p>
+      </div>
+      <img src="images/cp.jpg" alt="Cal Poly" class="edu-logo-big">
+    </div>
+    <div class="tabs">
+      <button class="tab-link" data-tab="paper1" data-show-text="Research Paper" data-hide-text="Hide">Research Paper</button>
+      <button class="tab-link" data-tab="paper2" data-show-text="Economics Paper" data-hide-text="Hide">Economics Paper</button>
+    </div>
+    <div class="tab-content" id="paper1">
+      <div class="responsive-pdf-container"><iframe src="projects/CRISPR_Research.pdf#zoom=page-width" allowfullscreen></iframe></div>
+    </div>
+    <div class="tab-content" id="paper2">
+      <div class="responsive-pdf-container"><iframe src="projects/ECON_Research.pdf#zoom=page-width" allowfullscreen></iframe></div>
+    </div>
+  </div>
+
+  <!-- Semester at Sea -->
+  <div class="edu-card" data-aos="fade-up">
+    <div class="edu-flex">
+      <div class="edu-text">
+        <h2>Semester at Sea</h2>
+        <p class="edu-date">Fall 2023 · Voyage 132</p>
+        <p>Traveled across the world while continuing university coursework aboard the MV World Odyssey.</p>
+      </div>
+            <img src="images/semester.png" alt="Semester at Sea" class="edu-logo-big" style="max-width:87px;">
+    </div>
+
+    <div class="voyage-wrap">
+      <div class="voyage-header">
+        <h3>The Voyage</h3>
+        <span>12 ports · 4 months</span>
+      </div>
+      <div class="voyage-grid">
+        <div class="voyage-stop">
+          <div class="voyage-num">1</div>
+          <div><div class="voyage-city">Antwerp</div><div class="voyage-country">Belgium</div></div>
+          <div class="voyage-flag">🇧🇪</div>
+        </div>
+        <div class="voyage-stop">
+          <div class="voyage-num">2</div>
+          <div><div class="voyage-city">Barcelona</div><div class="voyage-country">Spain</div></div>
+          <div class="voyage-flag">🇪🇸</div>
+        </div>
+        <div class="voyage-stop">
+          <div class="voyage-num">3</div>
+          <div><div class="voyage-city">Málaga</div><div class="voyage-country">Spain</div></div>
+          <div class="voyage-flag">🇪🇸</div>
+        </div>
+        <div class="voyage-stop">
+          <div class="voyage-num">4</div>
+          <div><div class="voyage-city">Gibraltar</div><div class="voyage-country">UK Territory</div></div>
+          <div class="voyage-flag">🇬🇮</div>
+        </div>
+        <div class="voyage-stop">
+          <div class="voyage-num">5</div>
+          <div><div class="voyage-city">Canary Isl.</div><div class="voyage-country">Spain</div></div>
+          <div class="voyage-flag">🇮🇨</div>
+        </div>
+        <div class="voyage-stop">
+          <div class="voyage-num">6</div>
+          <div><div class="voyage-city">Cape Town</div><div class="voyage-country">South Africa</div></div>
+          <div class="voyage-flag">🇿🇦</div>
+        </div>
+        <div class="voyage-stop">
+          <div class="voyage-num">7</div>
+          <div><div class="voyage-city">Mauritius</div><div class="voyage-country">Indian Ocean</div></div>
+          <div class="voyage-flag">🇲🇺</div>
+        </div>
+        <div class="voyage-stop">
+          <div class="voyage-num">8</div>
+          <div><div class="voyage-city">Penang</div><div class="voyage-country">Malaysia</div></div>
+          <div class="voyage-flag">🇲🇾</div>
+        </div>
+        <div class="voyage-stop">
+          <div class="voyage-num">9</div>
+          <div><div class="voyage-city">Hồ Chí Minh</div><div class="voyage-country">Vietnam</div></div>
+          <div class="voyage-flag">🇻🇳</div>
+        </div>
+        <div class="voyage-stop">
+          <div class="voyage-num">10</div>
+          <div><div class="voyage-city">Bangkok</div><div class="voyage-country">Thailand</div></div>
+          <div class="voyage-flag">🇹🇭</div>
+        </div>
+        <div class="voyage-stop">
+          <div class="voyage-num">11</div>
+          <div><div class="voyage-city">Athens</div><div class="voyage-country">Greece</div></div>
+          <div class="voyage-flag">🇬🇷</div>
+        </div>
+        <div class="voyage-stop">
+          <div class="voyage-num">12</div>
+          <div><div class="voyage-city">Malta</div><div class="voyage-country">Mediterranean</div></div>
+          <div class="voyage-flag">🇲🇹</div>
+        </div>
       </div>
     </div>
-    <img src="images/semester.png" alt="Semester at Sea Logo" class="edu-logo-big">
   </div>
+
 </div>
 
- <!-- Back to Top -->
- <a href="#" class="back-to-top">↑</a>
-</main>
+<a href="#" class="back-to-top">↑</a>
+<footer><p>© 2026 Anaïs Lohier</p></footer>
 
-<footer>
-  <p>© 2025 Anaïs Lohier</p>
-</footer>
-
-<!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-  AOS.init();
-  const scrollBtn = document.querySelector('.back-to-top');
-  window.addEventListener('scroll', () => {
-    scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+AOS.init({ once:true, duration:700 });
+const scrollBtn = document.querySelector('.back-to-top');
+window.addEventListener('scroll', () => { scrollBtn.style.display = window.scrollY>300?'flex':'none'; });
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+  document.querySelector('.nav-links').classList.toggle('active');
+});
+
+// Tab logic
+document.querySelectorAll('.tab-link').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tabId = btn.dataset.tab;
+    const card = btn.closest('.edu-card');
+    const content = card.querySelector('#'+tabId);
+    const isActive = btn.classList.contains('active');
+    card.querySelectorAll('.tab-link').forEach(b => { b.classList.remove('active'); b.textContent = b.dataset.showText; });
+    card.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    if (!isActive) { btn.classList.add('active'); btn.textContent = btn.dataset.hideText; content.classList.add('active'); }
   });
+});
 </script>
-<script src="script.js"></script>
 </body>
 </html>
