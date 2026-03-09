@@ -1,0 +1,1 @@
+This repository contains the source code for my personal website. The site serves as a portfolio for my work in computational biology, health informatics, and data science, and includes information about my research, projects, and academic background.
