@@ -14,18 +14,18 @@
     /* ── HERO — compact ── */
     .hero {
       min-height: 48vh; padding: 2rem 3rem 2.2rem; position: relative; overflow: hidden;
-      background: url('images/profile-banner.jpg') no-repeat center center / cover;
+      background: url('images/magritte-bg.jpg') no-repeat center 30% / cover;
       display: flex; flex-direction: column; justify-content: flex-end;
     }
     .hero::before { content:''; position:absolute; inset:0;
-      background: linear-gradient(to top, rgba(10,14,25,0.70) 0%, rgba(10,14,25,0.30) 50%, rgba(10,14,25,0.05) 100%);
+      background: linear-gradient(to top, rgba(30,49,73,0.92) 0%, rgba(30,49,73,0.6) 55%, rgba(30,49,73,0.35) 100%);
     }
     .hero::after { content:''; position:absolute; inset:0;
-      background: rgba(255,255,255,0.08); mix-blend-mode: screen; pointer-events:none; }
+      background: none; pointer-events:none; }
 
     .hero-content { position:relative; z-index:2; max-width:700px; }
     .hero-tag { font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.15em;
-      text-transform:uppercase; color:rgba(255,255,255,0.55); margin-bottom:0.5rem;
+      text-transform:uppercase; color:var(--parchment); margin-bottom:0.5rem;
       display:flex; align-items:center; gap:0.55rem; }
     .hero-tag::before { content:''; display:inline-block; width:16px; height:1.5px; background:rgba(255,255,255,0.4); flex-shrink:0; }
 
@@ -44,7 +44,15 @@
     .hero-sub { font-size:clamp(0.82rem,1.3vw,0.92rem); color:rgba(255,255,255,0.72);
       max-width:440px; line-height:1.65; font-weight:300; text-shadow:0 1px 6px rgba(0,0,0,0.3); }
 
+    .hero-resume {
+      position: absolute; top: 1.4rem; right: 2rem; z-index: 3; padding: 0.5rem 1.2rem; border-radius: var(--radius-pill);
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.3); color: #fff;
+      font-size: 0.82rem; font-weight: 500; backdrop-filter: blur(4px); transition: var(--t);
+    }
+    .hero-resume:hover { background: var(--parchment); color: var(--navy); border-color: var(--parchment); opacity: 1; }
+
     @media (max-width: 768px) {
+      .hero-resume { top: 1rem; right: 1rem; font-size: 0.75rem; padding: 0.4rem 0.9rem; }
       .hero { padding: 1.5rem 1.5rem 1.8rem; min-height: 32vh; }
       .hero-name-row { gap: 0.8rem; }
       .hero-photo { width:72px; height: 72px; }
@@ -76,6 +84,8 @@
       background: var(--linen);
       border-color: rgba(30,49,73,0.1);
     }
+    .home-card .card-label { color: var(--gold-ink); }
+    .home-card.card-navy .card-label { color: var(--parchment); }
 
     .card-label {
       font-family: 'Space Mono', monospace;
@@ -88,11 +98,11 @@
     /* ── ABOUT ── */
     .about-heading {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.45rem; line-height: 1.25; color: var(--navy);
+      font-size: 1.45rem; line-height: 1.25; color: var(--navy); font-style: italic;
       margin-bottom: 0.8rem;
     }
     .about-text {
-      font-size: 0.87rem; color: var(--ink-mid); line-height: 1.65;
+      font-size: 0.9rem; color: var(--ink-mid); line-height: 1.7;
       margin-bottom: 0.45rem;
     }
     .about-chips {
@@ -108,7 +118,7 @@
     .now-item:last-child { border-bottom: none; }
     .now-dot {
       width: 8px; height: 8px; border-radius: 50%;
-      background: rgba(255,255,255,0.2); flex-shrink: 0; margin-top: 0.4rem;
+      background: rgba(216,203,154,0.5); flex-shrink: 0; margin-top: 0.4rem;
     }
     .now-dot.live { background: var(--parchment); animation: blink 2.5s infinite; }
     @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.25;} }
@@ -118,7 +128,7 @@
       margin-bottom: 0.1rem;
     }
     .now-item .now-detail {
-      font-size: 0.74rem; color: rgba(255,255,255,0.5); line-height: 1.5;
+      font-size: 0.78rem; color: rgba(255,255,255,0.65); line-height: 1.5;
     }
 
     /* ── CONNECT (inline) ── */
@@ -127,7 +137,7 @@
     }
     .connect-link {
       display: inline-flex; align-items: center; gap: 0.45rem;
-      font-size: 0.8rem; color: var(--ink-mid);
+      font-size: 0.85rem; color: var(--ink-mid);
       text-decoration: none; transition: color 0.2s;
       padding: 0.3rem 0;
     }
@@ -145,29 +155,29 @@
     }
   </style>
 </head>
-<body>
+<body class="work-page">
 
 <nav>
   <a href="index.html" class="nav-left">Anaïs Lohier</a>
   <button class="menu-toggle">☰</button>
   <div class="nav-links">
     <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
     <a href="work.html">Work</a>
     <a href="education.html">Education</a>
-    <a href="resume.html">Resume</a>
     <a href="connect.html">Let's Connect</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <header class="hero">
+  <a href="projects/anais_lohier_resume.pdf" target="_blank" rel="noopener" class="hero-resume">View Resume ↗</a>
   <div class="hero-content">
     <p class="hero-tag">Yale University · Clinical Informatics</p>
     <div class="hero-name-row">
       <img src="images/profile.jpg" alt="Anaïs Lohier" class="hero-photo" loading="lazy">
       <h1 class="hero-title">Hi, I'm <em>Anaïs</em></h1>
     </div>
-    <p class="hero-sub">Bridging biology, machine learning, and global health.</p>
   </div>
 </header>
 
@@ -177,8 +187,11 @@
   <!-- ABOUT -->
   <div class="home-card card-white" data-aos="fade-up">
     <p class="card-label">About</p>
-    <h2 class="about-heading">Understanding healthcare,<br>through data.</h2>
-    <p class="about-text">My family is originally French, and I grew up in California and studied Business and Biology at Cal Poly. Semester at Sea took me across 11 countries, and somewhere along the way I realized I wanted be at the forefront of AI and data analysis. I'm now pursuing a master's in Health Informatics at Yale.</p>
+    <h2 class="about-heading">Even the most definitive findings<br>deserve a closer look.</h2>
+    <p class="about-text">I grew up in California in a French family and studied business and biology at Cal Poly. Now a Health Informatics master's student at Yale, I study how clinical findings are measured, classified, and documented, and what gets lost between the evidence and the decisions it informs.</p>
+    <div class="about-chips">
+      <span class="chip">Clinical informatics</span><span class="chip">Biomedical data science</span><span class="chip">Bayesian statistics</span><span class="chip">Diagnostic reasoning</span>
+    </div>
   </div>
 
   <!-- WHAT I'M WORKING ON -->
@@ -186,23 +199,23 @@
     <p class="card-label">What I'm working on now</p>
     <div class="now-item">
       <div class="now-dot live"></div>
-      <div><h3>Graduate Research Assistant · Augert Lab</h3><p class="now-detail">Modeling small-cell lung cancer as a fluid transcriptomic continuum rather than fixed subtypes</p></div>
+      <div><h3>Clinical observation study · Yale New Haven Hospital</h3><p class="now-detail">How findings acquire meaning and lose context in internal medicine</p></div>
     </div>
     <div class="now-item">
       <div class="now-dot live"></div>
-      <div><h3>Clinical Informatics Research </h3><p class="now-detail">Combining extensive literature review with a clinical observership at Yale New Haven Hospital examining how bedside judgment becomes structured documentation</p></div>
+      <div><h3>Subtype plasticity in SCLC · Augert Lab</h3><p class="now-detail">Continuous subtype states and plasticity over disease progression</p></div>
     </div>
     <div class="now-item">
       <div class="now-dot live"></div>
-      <div><h3>Quality improvement · HAVEN Free Clinic</h3><p class="now-detail">Analyzing care processes and clinical outcomes to support QA/QI initiatives across clinic departments</p></div>
+      <div><h3>Pediatric thermometry · Epic Cosmos</h3><p class="now-detail">Bayesian models of pediatric temperature in EHR data</p></div>
     </div>
     <div class="now-item">
       <div class="now-dot live"></div>
-      <div><h3>IOP Journal of Physiological Measurement (pending)</h3><p class="now-detail">Addressing demographic bias and measurement noise in clinical thermal imaging</p></div>
+      <div><h3>Teaching Fellow · Clinical and Translational Informatics</h3><p class="now-detail">Yale School of Public Health</p></div>
     </div>
     <div class="now-item">
       <div class="now-dot live"></div>
-      <div><h3>M.Sc. Coursework </h3><p class="now-detail">Yale School of Public Health, Health Informatics</p></div>
+      <div><h3>Quality improvement · HAVEN Free Clinic</h3><p class="now-detail">QI metrics across 20 clinic departments</p></div>
     </div>
   </div>
 

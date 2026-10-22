@@ -588,7 +588,7 @@ body.resume-page .nav-links a:hover {
 
 /* ── CONNECT PAGE ── */
 body.connect-page {
-  background: url('images/education-bg1.jpg') no-repeat center center fixed;
+  background: url('images/magritte-bg.jpg') no-repeat center center fixed;
   background-size: cover; min-height: 100vh; display: flex; flex-direction: column;
 }
 body.connect-page::before {
@@ -700,3 +700,48 @@ body.resume-page footer { border-top-color: rgba(30,49,73,0.1); }
   .work-track { grid-template-columns: 1fr; }
   .hero h1 { font-size: 2.8rem; }
 }
+
+/* ── SITE-WIDE THEME: cream pages, Magritte banners ── */
+:root { --gold-ink: #8A7638; }
+body.work-page { background: var(--cream); color: var(--ink); }
+body.work-page nav { background: rgba(245,242,235,0.94); border-bottom-color: var(--border-nav); }
+body.work-page .nav-left { color: var(--navy) !important; }
+body.work-page .nav-links a { color: var(--ink-mid) !important; }
+body.work-page .nav-links a:hover { background: rgba(30,49,73,0.06); border-color: var(--border); color: var(--navy) !important; }
+body.work-page footer { color: var(--ink-light); border-top-color: var(--border); }
+@media (max-width: 768px) {
+  body.work-page .nav-links { background: rgba(245,242,235,0.98); border-color: var(--border-nav); }
+}
+
+.work-hero-banner { background: var(--navy); }
+.work-hero-banner img { opacity: 0.4; }
+
+.work-track-wrap { max-width: 1240px; margin: 0 auto; }
+.work-track-label { color: var(--steel); }
+.work-track-label::after { background: var(--border); }
+.work-card { background: #fff; border-color: var(--border); box-shadow: var(--shadow); }
+.work-card:hover { background: #fff; border-color: rgba(216,203,154,0.9); box-shadow: var(--shadow-lg); }
+.work-card-body { border-top-color: var(--border); }
+.work-card-tag { color: var(--gold-ink); }
+.work-card-title { color: var(--navy); }
+.work-card-date { color: var(--ink-light); }
+.work-card-details ul { border-top-color: var(--border); }
+.work-card-details ul li { color: var(--ink-mid); }
+.work-card-details ul li::before { color: var(--gold-ink); }
+.work-card-details ul li a { color: var(--steel) !important; }
+
+body.work-page .edu-wrap { padding-top: 1.5rem; }
+
+/* ── DARK OMBRE PAGE (Education) ── */
+html:has(body.dark-ombre) { background: #0A1628; }
+body.dark-ombre { background: linear-gradient(170deg, #0D1B2A 0%, #1A2E44 45%, #0A1628 100%); min-height: 100vh; color: #fff; }
+body.dark-ombre nav { background: rgba(13,27,42,0.92); border-bottom-color: rgba(255,255,255,0.08); }
+body.dark-ombre .nav-left { color: #fff !important; }
+body.dark-ombre .nav-links a { color: rgba(255,255,255,0.65) !important; }
+body.dark-ombre .nav-links a:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.12); color: #fff !important; }
+body.dark-ombre .work-hero-banner { background: transparent; }
+body.dark-ombre .work-hero-banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, #0D1B2A 100%); }
+body.dark-ombre .work-hero-banner h1 { z-index: 3; }
+body.dark-ombre .edu-card { border-color: transparent; box-shadow: 0 20px 60px rgba(0,0,0,0.35); }
+body.dark-ombre footer { color: rgba(255,255,255,0.3); border-top-color: rgba(255,255,255,0.08); }
+@media (max-width: 768px) { body.dark-ombre .nav-links { background: rgba(13,27,42,0.98); border-color: rgba(255,255,255,0.1); } }
