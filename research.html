@@ -15,7 +15,7 @@
     .flow { position: relative; display: grid; grid-template-columns: repeat(5, 1fr); }
     .flow::before {
       content: ''; position: absolute; left: 10%; right: 10%; top: 9px; height: 1px;
-      background: linear-gradient(to right, var(--navy) 80%, rgba(30,49,73,0.2) 80%);
+      background: linear-gradient(to right, rgba(30,49,73,0.2) 0%, var(--navy) 79%, rgba(30,49,73,0.2) 80%);
     }
     .node {
       background: none; border: none; cursor: pointer; text-align: center;
@@ -34,6 +34,11 @@
     .proj { font-size: 0.78rem; color: var(--gold-ink); }
     .node.active .proj { opacity: 1; }
 
+    .flow-end { position: absolute; top: 3px; font-family: 'Space Mono', monospace; font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-light); }
+    .flow-end.start { left: 0; }
+    .flow-end.finish { right: 0; }
+    @media (max-width: 720px) { .flow-end { display: none; } }
+    .flow-caption { text-align: center; margin-top: 1.6rem; font-family: 'DM Serif Display', serif; font-style: italic; font-size: 0.95rem; color: var(--ink-light); }
     .panel {
       margin-top: 2.6rem; background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
       box-shadow: var(--shadow); padding: 2.2rem 2.4rem; min-height: 180px;
@@ -47,6 +52,16 @@
     }
     .panel-meta { font-family: 'Space Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); margin-bottom: 0.8rem; }
     .panel-text { font-size: 1.02rem; line-height: 1.85; color: var(--ink-mid); max-width: 740px; margin-top: 1.1rem; font-weight: 400; }
+    .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 1.5rem; max-width: 760px; }
+    .compare-col { background: var(--linen); border-radius: var(--radius-sm); padding: 1.1rem 1.2rem; border-top: 3px solid var(--navy); }
+    .compare-col.lost { border-top-color: var(--gold-ink); }
+    .compare-h { font-family: 'Space Mono', monospace; font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--navy); margin-bottom: 0.6rem; }
+    .compare-col.lost .compare-h { color: var(--gold-ink); }
+    .compare ul { list-style: none; padding: 0; margin: 0; }
+    .compare li { font-size: 0.86rem; color: var(--ink-mid); line-height: 1.55; padding-left: 1rem; position: relative; margin-bottom: 0.45rem; }
+    .compare li::before { content: '→'; position: absolute; left: 0; font-size: 0.7rem; top: 0.15rem; color: var(--navy); }
+    .compare-col.lost li::before { content: '×'; color: var(--gold-ink); font-size: 0.85rem; top: 0.02rem; }
+    @media (max-width: 720px) { .compare { grid-template-columns: 1fr; } }
     .panel-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; margin-top: 1.4rem; }
     .panel-stat b { display: block; font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.9rem; color: var(--navy); line-height: 1; }
     .panel-stat span { font-size: 0.82rem; color: var(--ink-mid); }
@@ -114,14 +129,14 @@
     <button class="node" data-i="1"><span class="dot"></span><span class="num">02</span><span class="stage">Classification</span><span class="proj">SCLC plasticity</span></button>
     <button class="node" data-i="2"><span class="dot"></span><span class="num">03</span><span class="stage">Interpretation</span><span class="proj">Clinical observation</span></button>
     <button class="node" data-i="3"><span class="dot"></span><span class="num">04</span><span class="stage">Documentation</span><span class="proj">Transfusion tracking</span></button>
-    <button class="node future" data-i="4"><span class="dot"></span><span class="num">05</span><span class="stage">Decision</span><span class="proj">PhD direction</span></button>
+    <button class="node future" data-i="4"><span class="dot"></span><span class="num">05</span><span class="stage">Diagnosis</span><span class="proj">PhD direction</span></button>
   </div>
 
   <div class="panel">
     <div class="panel-item active">
       <p class="panel-meta">Clinical Thermometry</p>
       <p class="panel-q">For whom is 37°C a normal body temperature?</p>
-      <p class="panel-text">Using infrared facial temperature data collected during the COVID-19 pandemic, I found statistically significant temperature differences across recorded racial and ethnic groups that were comparable in size to the instrument's stated accuracy, and Monte Carlo sensitivity analyses showed group rankings becoming increasingly unstable under simulated measurement error. I am now using Epic Cosmos and Bayesian inference to examine how pediatric temperature distributions vary with age, clinical presentation, and care setting, and how reliably EHR data can inform pediatric reference ranges and fever classifications.</p>
+      <p class="panel-text">Using infrared facial temperature data collected during the COVID-19 pandemic, I found statistically significant differences of 0.2 to 0.3°C across recorded racial and ethnic groups. Yet the differences were comparable to the instrument's stated accuracy of ±0.2°C, and group rankings became increasingly unstable as simulated measurement error increased. I am now using Epic Cosmos and Bayesian inference to examine how pediatric temperature distributions vary with age, clinical presentation, and care setting, and how reliably electronic health records can inform pediatric reference ranges and fever classifications.</p>
       <div class="panel-stats">
         <div class="panel-stat"><b>0.2–0.3°C</b><span>differences across recorded groups</span></div>
         <div class="panel-stat"><b>±0.2°C</b><span>instrument stated accuracy</span></div>
@@ -130,8 +145,8 @@
     </div>
     <div class="panel-item">
       <p class="panel-meta">SCLC Subtype Plasticity · Augert Lab</p>
-      <p class="panel-q">What does a single subtype label conceal as tumors evolve?</p>
-      <p class="panel-text">In Arnaud Augert's lab, I developed a continuous framework from gene-expression signatures that separates a tumor's neuroendocrine identity from its immune state, alongside plasticity scores quantifying overlap among molecular subtypes. Tumors with conflicting subtype assignments between immunohistochemistry and gene-expression clustering showed higher plasticity, and after adapting the framework to cfDNA methylation data, plasticity scores were higher at progression and after chemotherapy across independent cohorts.</p>
+      <p class="panel-q">What might a subtype label leave out?</p>
+      <p class="panel-text">Small-cell lung cancer tumors are assigned a single molecular subtype, even though a tumor's neuroendocrine identity and immune state represent distinct biological dimensions. Using gene-expression signatures, I scored each dimension on a continuous scale and measured overlap between subtypes with plasticity scores. Tumors classified differently by immunohistochemistry and gene-expression clustering had higher plasticity scores, and plasticity rose at disease progression and after chemotherapy. As subtype-specific therapies emerge, a label assigned at diagnosis may no longer represent a tumor's biology when later treatment decisions are made.</p>
       <div class="panel-stats">
         <div class="panel-stat"><b>3.1×</b><span>cfDNA at progression vs. baseline</span></div>
         <div class="panel-stat"><b>2.25×</b><span>post-chemotherapy vs. treatment-naive biopsies</span></div>
@@ -139,18 +154,18 @@
     </div>
     <div class="panel-item">
       <p class="panel-meta">Clinical Observation · Yale New Haven Hospital</p>
-      <p class="panel-q">How do clinical findings acquire meaning as physicians interpret them?</p>
-      <p class="panel-text">In a year-long observational study with Dr. Ritchie Verma's internal medicine team at Yale New Haven Hospital, I trace how clinical findings are interpreted across bedside encounters, team discussions, consultations, and handoffs. Advised by Dr. David Chartash, I am developing an information model, grounded in qualitative analysis, to show where clinical interpretations arise and where their context, uncertainty, or rationale may be lost.</p>
+      <p class="panel-q">What do physicians register as meaningful information, and what happens to it next?</p>
+      <p class="panel-text">For my master's capstone, I am conducting a year-long observational study of inpatient and ambulatory internal medicine at Yale New Haven Hospital, examining what data physicians register as meaningful information across bedside encounters, team discussions, consultations, and handoffs. Through qualitative analysis, I am developing an information model to trace how physicians turn observations into meaningful information and where that meaning may be lost as it passes between clinicians and into the medical record.</p>
     </div>
     <div class="panel-item">
-      <p class="panel-meta">Clinical Observation · Massive Transfusion Tracking</p>
-      <p class="panel-q">What does the record carry forward through handoffs?</p>
-      <p class="panel-text">My observational study also follows how findings are written into notes and carried through handoffs, where the same values can mean something different to a physician reading them without the original context. In a separate project with Yale New Haven Health trauma services, I am working to improve how blood product ordering, administration, and documentation are tracked during massive transfusion protocols.</p>
+      <p class="panel-meta">Massive Transfusion Tracking · Yale New Haven Health</p>
+      <p class="panel-q">What happens during a massive transfusion, and what reaches the record?</p>
+      <p class="panel-text">Working with Yale New Haven Health trauma services, I am examining how blood products given during massive transfusions are ordered, tracked, and documented in Epic, and where the record diverges from what was actually administered. Emergency blood is often given before an order exists, and products are frequently scanned and charted after the protocol ends, leaving clinicians without a reliable count of what was given when balancing transfusions or handing the patient to the next team. Our goal is to give clinicians an accurate and accessible record of administered blood products that supports real-time transfusion decisions and continuity of care.</p>
     </div>
     <div class="panel-item">
       <p class="panel-meta">PhD Direction</p>
-      <p class="panel-q">When do these changes alter diagnoses and treatments?</p>
-      <p class="panel-text">Across these projects, clinical measurements and classifications can appear more definitive than the evidence they represent. In doctoral work, I hope to develop methods that link findings, assessments, and actions across notes, laboratory results, and orders, measure how changes in clinical judgment affect diagnosis and treatment, and test better ways of presenting evolving evidence and uncertainty to clinicians.</p>
+      <p class="panel-q">As physicians turn data into information, when do changes affect the diagnoses they consider or the treatments they pursue?</p>
+      <p class="panel-text">My doctoral objective is to develop computational and statistical methods to investigate how clinical information is produced, represented, and transformed throughout the diagnostic process. I aim to examine how these transformations affect the reliability and interpretation of clinical findings, quantify their consequences for diagnostic decisions, and use those findings to design and evaluate targeted improvements to clinical systems and workflows.</p>
     </div>
   </div>
 </div>
