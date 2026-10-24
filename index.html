@@ -153,6 +153,16 @@
       .home-cards { padding: 1rem 1.2rem 2rem; }
       .home-card { padding: 1.4rem 1.2rem; }
     }
+    /* banner is the painting only, intro lives in the About card */
+    .hero { min-height: 42vh; background-position: center 22%; }
+    .hero::before { background: linear-gradient(to top, rgba(30,49,73,0.35) 0%, rgba(30,49,73,0.1) 60%, rgba(30,49,73,0.05) 100%) !important; }
+    .home-cards { margin-top: -4.5rem; position: relative; z-index: 2; }
+    .intro-row { display: flex; align-items: center; gap: 1.3rem; margin-bottom: 1.1rem; }
+    .intro-photo { width: 92px; height: 92px; border-radius: 50%; object-fit: cover; object-position: top center; border: 3px solid var(--parchment); flex-shrink: 0; }
+    .intro-title { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 2.9rem); color: var(--navy); line-height: 1.05; letter-spacing: -0.02em; }
+    .intro-title em { font-style: italic; color: var(--gold-ink); }
+    .intro-row .card-label { margin-bottom: 0.4rem; }
+    @media (max-width: 768px) { .intro-photo { width: 68px; height: 68px; } .hero { min-height: 30vh; } .home-cards { margin-top: -2.5rem; } }
   </style>
 </head>
 <body class="work-page">
@@ -172,13 +182,6 @@
 <!-- HERO -->
 <header class="hero">
   <a href="projects/anais_lohier_resume.pdf" target="_blank" rel="noopener" class="hero-resume">View Resume ↗</a>
-  <div class="hero-content">
-    <p class="hero-tag">Yale University · Clinical Informatics</p>
-    <div class="hero-name-row">
-      <img src="images/profile.jpg" alt="Anaïs Lohier" class="hero-photo" loading="lazy">
-      <h1 class="hero-title">Hi, I'm <em>Anaïs</em></h1>
-    </div>
-  </div>
 </header>
 
 <!-- STACKED CARDS -->
@@ -186,8 +189,13 @@
 
   <!-- ABOUT -->
   <div class="home-card card-white" data-aos="fade-up">
-    <p class="card-label">About</p>
-    <h2 class="about-heading">Even the most definitive findings<br>deserve a closer look.</h2>
+    <div class="intro-row">
+      <img src="images/profile.jpg" alt="Anaïs Lohier" class="intro-photo">
+      <div>
+        <p class="card-label">Yale University · Clinical Informatics</p>
+        <h1 class="intro-title">Hi, I'm <em>Anaïs</em></h1>
+      </div>
+    </div>
     <p class="about-text">I grew up in California in a French family and studied business and biology at Cal Poly. Now a Health Informatics master's student at Yale, I study how clinical findings are measured, classified, and documented, and what gets lost between the evidence and the decisions it informs.</p>
     <div class="about-chips">
       <span class="chip">Clinical informatics</span><span class="chip">Biomedical data science</span><span class="chip">Bayesian statistics</span><span class="chip">Diagnostic reasoning</span>
