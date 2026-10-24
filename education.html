@@ -103,23 +103,9 @@
         <h2>Yale University</h2>
         <p class="edu-date">2025 · 2027 · New Haven, CT</p>
         <p>M.Sc. in Public Health, Concentration in Health Informatics</p>
-        <p style="margin-top:0.4rem;">Selected academic work:</p>
+        <p>Activities: Pickleball, Volleyball, HAVEN Free Clinic</p>
       </div>
       <img src="images/yale.jpg" alt="Yale" class="edu-logo-big">
-    </div>
-    <div class="tabs">
-      <button class="tab-link" data-tab="yale-thermometry" data-show-text="The Significance of 37°C" data-hide-text="Hide">The Significance of 37°C</button>
-    </div>
-    <div class="tab-content" id="yale-thermometry">
-      <div class="responsive-pdf-container"><iframe src="projects/thermometry_essay.pdf#zoom=page-width" allowfullscreen></iframe></div>
-    </div>
-    <div class="tab-content" id="yale-healthreach">
-      <p style="margin-bottom:0.75rem;font-size:0.9rem;color:var(--ink-mid);">A Flask + Plotly application visualizing cost-related barriers to healthcare access (1997–2019), with subgroup filtering and Euler-based trend projections.</p>
-      <img src="images/healthreach_preview.png" alt="HealthReach" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--border);">
-    </div>
-    <div class="tab-content" id="yale-admission">
-      <p style="margin-bottom:0.75rem;font-size:0.9rem;color:var(--ink-mid);">Curious about my admission journey? Here's a preview — for the full version, <a href="mailto:anais.lohier@yale.edu">email me!</a></p>
-      <div class="responsive-pdf-container"><iframe src="projects/admission_essay.pdf#zoom=page-width" allowfullscreen></iframe></div>
     </div>
   </div>
 
@@ -131,19 +117,9 @@
         <p class="edu-date">2022 · 2025 · San Luis Obispo, CA</p>
         <p>B.S. in Business Administration (Quantitative Analysis)</p>
         <p>Minors: Biology &amp; French</p>
-        <p>Clubs: WIB, SMPP, Phi Sigma Iota, Cal Poly Consulting, Volleyball</p>
-        <p style="margin-top:0.4rem;">Selected academic work:</p>
+        <p>Activities: Women in Business, Student Managed Portfolio Project, Cal Poly Consulting</p>
       </div>
       <img src="images/cp.jpg" alt="Cal Poly" class="edu-logo-big">
-    </div>
-    <div class="tabs">
-      <button class="tab-link" data-tab="paper1" data-show-text="Research Paper" data-hide-text="Hide">Research Paper</button>
-    </div>
-    <div class="tab-content" id="paper1">
-      <div class="responsive-pdf-container"><iframe src="projects/CRISPR_Research.pdf#zoom=page-width" allowfullscreen></iframe></div>
-    </div>
-    <div class="tab-content" id="paper2">
-      <div class="responsive-pdf-container"><iframe src="projects/ECON_Research.pdf#zoom=page-width" allowfullscreen></iframe></div>
     </div>
   </div>
 
@@ -235,7 +211,7 @@
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-AOS.init({ once:true, duration:700 });
+AOS.init({ once:true, duration:300, offset:20 });
 const scrollBtn = document.querySelector('.back-to-top');
 window.addEventListener('scroll', () => { scrollBtn.style.display = window.scrollY>300?'flex':'none'; });
 document.querySelector('.menu-toggle').addEventListener('click', () => {

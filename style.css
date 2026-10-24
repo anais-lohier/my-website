@@ -753,3 +753,7 @@ body.dark-ombre footer { color: rgba(255,255,255,0.3); border-top-color: rgba(25
 body.work-page .work-card:hover { border-color: #b8c6d4; }
 body.work-page .work-expand-btn { background: #f3f5f8; border-color: #d5dde6; color: var(--steel); }
 body.work-page .work-card:hover .work-expand-btn, body.work-page .work-card.open .work-expand-btn { background: var(--navy); color: #fff; }
+
+/* bolder section labels */
+.work-track-label { font-weight: 700; font-size: 0.66rem; color: var(--navy); }
+.work-track-label::after { background: rgba(30,49,73,0.25); }
