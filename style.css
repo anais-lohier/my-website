@@ -703,14 +703,17 @@ body.resume-page footer { border-top-color: rgba(30,49,73,0.1); }
 
 /* ── SITE-WIDE THEME: cream pages, Magritte banners ── */
 :root { --gold-ink: #8A7638; }
-body.work-page { background: var(--cream); color: var(--ink); }
-body.work-page nav { background: rgba(245,242,235,0.94); border-bottom-color: var(--border-nav); }
+body.work-page {
+  --cream: #ffffff; --linen: #f3f5f8; --parchment: #a9bccf; --sand: #c9d3de; --gold-ink: #4A6475;
+  background: #fff; color: var(--ink);
+}
+body.work-page nav { background: rgba(255,255,255,0.96); border-bottom-color: #e9ecf0; }
 body.work-page .nav-left { color: var(--navy) !important; }
 body.work-page .nav-links a { color: var(--ink-mid) !important; }
 body.work-page .nav-links a:hover { background: rgba(30,49,73,0.06); border-color: var(--border); color: var(--navy) !important; }
 body.work-page footer { color: var(--ink-light); border-top-color: var(--border); }
 @media (max-width: 768px) {
-  body.work-page .nav-links { background: rgba(245,242,235,0.98); border-color: var(--border-nav); }
+  body.work-page .nav-links { background: rgba(255,255,255,0.98); border-color: #e9ecf0; }
 }
 
 .work-hero-banner { background: var(--navy); }
@@ -745,3 +748,8 @@ body.dark-ombre .work-hero-banner h1 { z-index: 3; }
 body.dark-ombre .edu-card { border-color: transparent; box-shadow: 0 20px 60px rgba(0,0,0,0.35); }
 body.dark-ombre footer { color: rgba(255,255,255,0.3); border-top-color: rgba(255,255,255,0.08); }
 @media (max-width: 768px) { body.dark-ombre .nav-links { background: rgba(13,27,42,0.98); border-color: rgba(255,255,255,0.1); } }
+
+/* cool accents replacing the warm gold */
+body.work-page .work-card:hover { border-color: #b8c6d4; }
+body.work-page .work-expand-btn { background: #f3f5f8; border-color: #d5dde6; color: var(--steel); }
+body.work-page .work-card:hover .work-expand-btn, body.work-page .work-card.open .work-expand-btn { background: var(--navy); color: #fff; }

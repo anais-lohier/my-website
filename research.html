@@ -27,7 +27,7 @@
       border: 1.5px solid var(--navy); transition: var(--t); position: relative; z-index: 1;
     }
     .node.future .dot { border-style: dashed; border-color: rgba(30,49,73,0.45); }
-    .node:hover .dot, .node.active .dot { background: var(--navy); box-shadow: 0 0 0 4px rgba(216,203,154,0.6); transform: scale(1.1); }
+    .node:hover .dot, .node.active .dot { background: var(--navy); box-shadow: 0 0 0 4px rgba(74,100,117,0.22); transform: scale(1.1); }
     .num { font-family: 'Space Mono', monospace; font-size: 0.55rem; letter-spacing: 0.12em; color: var(--ink-light); margin-top: 0.4rem; }
     .stage { font-family: 'DM Serif Display', serif; font-size: clamp(1rem, 1.8vw, 1.3rem); color: var(--ink-mid); transition: var(--t); }
     .node.active .stage, .node:hover .stage { color: var(--navy); }
@@ -50,10 +50,10 @@
     @keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
     .panel-q {
       font-family: 'DM Serif Display', serif; font-style: italic;
-      font-size: clamp(1.4rem, 3vw, 2rem); line-height: 1.25; color: var(--navy); max-width: 720px;
+      font-size: clamp(1.15rem, 2.2vw, 1.45rem); line-height: 1.25; color: var(--navy); max-width: 720px;
     }
     .panel-meta { font-family: 'Space Mono', monospace; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold-ink); margin-bottom: 0.8rem; }
-    .panel-text { font-size: 1.02rem; line-height: 1.85; color: var(--ink-mid); max-width: 740px; margin-top: 1.1rem; font-weight: 400; }
+    .panel-text { font-size: 0.9rem; line-height: 1.75; color: var(--ink-mid); max-width: 740px; margin-top: 1.1rem; font-weight: 400; }
     .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 0.9rem; margin-top: 1.5rem; max-width: 760px; }
     .compare-col { background: var(--linen); border-radius: var(--radius-sm); padding: 1.1rem 1.2rem; border-top: 3px solid var(--navy); }
     .compare-col.lost { border-top-color: var(--gold-ink); }
@@ -64,9 +64,24 @@
     .compare li::before { content: '→'; position: absolute; left: 0; font-size: 0.7rem; top: 0.15rem; color: var(--navy); }
     .compare-col.lost li::before { content: '×'; color: var(--gold-ink); font-size: 0.85rem; top: 0.02rem; }
     @media (max-width: 720px) { .compare { grid-template-columns: 1fr; } }
+    .panel-grid { display: grid; gap: 1.8rem 2.6rem; align-items: center; }
+    .panel-fig { background: #f2f4f7; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 1.2rem; justify-self: center; }
+    .panel-fig img { display: block; height: auto; max-width: 100%; mix-blend-mode: multiply; }
+    .fig-top { grid-template-areas: "fig" "body"; }
+    .fig-top .panel-fig { width: min(640px, 100%); }
+    .fig-right { grid-template-columns: 1fr 260px; grid-template-areas: "body fig"; }
+    .fig-right .panel-fig { width: 260px; }
+    .fig-mid { grid-template-areas: "body" "fig"; }
+    .fig-mid .panel-fig { width: min(440px, 100%); padding: 1.4rem 2rem; }
+    .fig-left { grid-template-columns: 300px 1fr; grid-template-areas: "fig body"; }
+    .fig-left .panel-fig { width: 300px; }
+    .panel-body { grid-area: body; } .panel-fig { grid-area: fig; }
+    .panel-quote { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.1rem; line-height: 1.25; color: var(--navy); text-align: center; }
+    .panel-quote cite { display: block; font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.82rem; color: var(--ink-light); margin-top: 0.7rem; }
+    @media (max-width: 860px) { .panel-grid { grid-template-columns: 1fr !important; grid-template-areas: "fig" "body" !important; } .panel-fig { width: min(100%, 420px) !important; } }
     .panel-stats { display: flex; gap: 2.5rem; flex-wrap: wrap; margin-top: 1.4rem; }
-    .panel-stat b { display: block; font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.9rem; color: var(--navy); line-height: 1; }
-    .panel-stat span { font-size: 0.82rem; color: var(--ink-mid); }
+    .panel-stat b { display: block; font-family: 'DM Serif Display', serif; font-weight: 400; font-size: 1.5rem; color: var(--navy); line-height: 1; }
+    .panel-stat span { font-size: 0.75rem; color: var(--ink-mid); }
 
     .panel-link {
       display: inline-block; margin-top: 1.6rem; padding: 0.5rem 1.2rem; border-radius: var(--radius-pill);
@@ -130,12 +145,14 @@
     <button class="node active" data-i="0"><span class="dot"></span><span class="num">01</span><span class="stage">Measurement</span><span class="proj">Thermometry</span></button>
     <button class="node" data-i="1"><span class="dot"></span><span class="num">02</span><span class="stage">Classification</span><span class="proj">SCLC plasticity</span></button>
     <button class="node" data-i="2"><span class="dot"></span><span class="num">03</span><span class="stage">Interpretation</span><span class="proj">Clinical observation</span></button>
-    <button class="node" data-i="3"><span class="dot"></span><span class="num">04</span><span class="stage">Documentation</span><span class="proj">Transfusion tracking</span></button>
+    <button class="node" data-i="3"><span class="dot"></span><span class="num">04</span><span class="stage">Documentation</span><span class="proj">Blood transfusion tracking</span></button>
     <button class="node future" data-i="4"><span class="dot"></span><span class="num">05</span><span class="stage">Diagnosis</span><span class="proj">PhD direction</span></button>
   </div>
 
   <div class="panel">
     <div class="panel-item active">
+      <div class="panel-grid fig-top">
+        <div class="panel-body">
       <p class="panel-meta">Clinical Thermometry</p>
       <p class="panel-q">For whom is 37°C a normal body temperature?</p>
       <p class="panel-text">Using infrared facial temperature data collected during the COVID-19 pandemic, I found statistically significant differences of 0.2 to 0.3°C across recorded racial and ethnic groups. Yet the differences were comparable to the instrument's stated accuracy of ±0.2°C, and group rankings became increasingly unstable as simulated measurement error increased. I am now using Epic Cosmos and Bayesian inference to examine how pediatric temperature distributions vary with age, clinical presentation, and care setting, and how reliably electronic health records can inform pediatric reference ranges and fever classifications.</p>
@@ -144,8 +161,13 @@
         <div class="panel-stat"><b>±0.2°C</b><span>instrument stated accuracy</span></div>
       </div>
       <a href="https://www.medrxiv.org/content/10.64898/2026.10.19.26365925v1" target="_blank" rel="noopener" class="panel-link">Read the preprint on medRxiv ↗</a>
+        </div>
+        <div class="panel-fig"><img src="images/research/thermometry.png" alt="Violin plots of facial temperature by recorded racial and ethnic group, with a dashed line at 37°C"></div>
+      </div>
     </div>
     <div class="panel-item">
+      <div class="panel-grid fig-right">
+        <div class="panel-body">
       <p class="panel-meta">SCLC Subtype Plasticity · Augert Lab</p>
       <p class="panel-q">What might a subtype label leave out?</p>
       <p class="panel-text">Small-cell lung cancer tumors are assigned a single molecular subtype, even though a tumor's neuroendocrine identity and immune state represent distinct biological dimensions. Using gene-expression signatures, I scored each dimension on a continuous scale and measured overlap between subtypes with plasticity scores. Tumors classified differently by immunohistochemistry and gene-expression clustering had higher plasticity scores, and plasticity rose at disease progression and after chemotherapy. As subtype-specific therapies emerge, a label assigned at diagnosis may no longer represent a tumor's biology when later treatment decisions are made.</p>
@@ -153,17 +175,30 @@
         <div class="panel-stat"><b>3.1×</b><span>cfDNA at progression vs. baseline</span></div>
         <div class="panel-stat"><b>2.25×</b><span>post-chemotherapy vs. treatment-naive biopsies</span></div>
       </div>
+        </div>
+        <div class="panel-fig"><img src="images/research/sclc.png" alt="Plasticity scores in cfDNA samples at baseline and progression"></div>
+      </div>
     </div>
     <div class="panel-item">
+      <div class="panel-grid fig-mid">
+        <div class="panel-body">
       <p class="panel-meta">Clinical Observation · Yale New Haven Hospital</p>
       <p class="panel-q">What do physicians register as meaningful information, and what happens to it next?</p>
       <p class="panel-text">For my master's capstone, I am conducting a year-long observational study of inpatient and ambulatory internal medicine at Yale New Haven Hospital, examining what data physicians register as meaningful information across bedside encounters, team discussions, consultations, and handoffs. Through qualitative analysis, I am developing an information model to trace how physicians turn observations into meaningful information and where that meaning may be lost as it passes between clinicians and into the medical record.</p>
       <p class="panel-note">Manuscript in preparation · <em>The Making of Clinical Information: A Qualitative Study of How Information Is Interpreted and Documented in an Academic Health System</em></p>
+        </div>
+        <div class="panel-fig"><blockquote class="panel-quote">“I don't think these are her labs.”<cite>An attending, on rounds</cite></blockquote></div>
+      </div>
     </div>
     <div class="panel-item">
-      <p class="panel-meta">Massive Transfusion Tracking · Yale New Haven Health</p>
+      <div class="panel-grid fig-left">
+        <div class="panel-body">
+      <p class="panel-meta">Massive Blood Transfusion Tracking · Yale New Haven Health</p>
       <p class="panel-q">What happens during a massive transfusion, and what reaches the record?</p>
       <p class="panel-text">Working with Yale New Haven Health trauma services, I am examining how blood products given during massive transfusions are ordered, tracked, and documented in Epic, and where the record diverges from what was actually administered. Emergency blood is often given before an order exists, and products are frequently scanned and charted after the protocol ends, leaving clinicians without a reliable count of what was given when balancing transfusions or handing the patient to the next team. Our goal is to give clinicians an accurate and accessible record of administered blood products that supports real-time transfusion decisions and continuity of care.</p>
+        </div>
+        <div class="panel-fig"><img src="images/research/transfusion.png" alt="Bags of packed red blood cells, fresh frozen plasma, and platelets"></div>
+      </div>
     </div>
     <div class="panel-item">
       <p class="panel-meta">PhD Direction</p>
