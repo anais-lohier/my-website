@@ -164,7 +164,7 @@
     @media (max-width: 768px) { .intro-photo { width: 68px; height: 68px; } .hero { min-height: 30vh; } }
     /* ── SPLIT LAYOUT, no cards ── */
     .home-split {
-      max-width: 1120px; margin: 0 auto; padding: 3.6rem 2.5rem 4.5rem;
+      max-width: 70rem; margin: 0 auto; padding: 3.6rem 2.5rem 4.5rem;
       display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 4.5rem; align-items: start;
     }
     .home-cards { display: none; }
@@ -193,7 +193,7 @@
     /* ── HOME: large name, photo, navy research band ── */
     body.work-page { background: #fff; }
     body.work-page nav { background: #fff; border-bottom-color: #e4e8ee; }
-    .hx { max-width: 1120px; margin: 0 auto; padding: 4rem 2.5rem 4rem; }
+    .hx { max-width: 70rem; margin: 0 auto; padding: 4rem 2.5rem 4rem; }
     .hx-name { font-family: 'DM Serif Display', serif; font-weight: 400; font-size: clamp(3rem, 8vw, 6.6rem); color: var(--navy); letter-spacing: -0.02em; line-height: 1; padding-bottom: 2.2rem; border-bottom: 3px solid var(--navy); }
     .hx-hi { display: block; font-size: 0.32em; font-style: italic; color: var(--steel); margin-bottom: 0.35rem; letter-spacing: 0; }
     .home-banner h1 { line-height: 1; }
@@ -202,8 +202,10 @@
     .hx-photo { width: 230px; height: 265px; object-fit: cover; object-position: center 20%; }
     .hx-about { font-size: 0.97rem; line-height: 1.75; color: #2b333d; max-width: 34em; }
     .hx-links { display: flex; gap: 1.8rem; margin-top: 1.6rem; }
-    .hx-links a { color: var(--navy); font-weight: 600; font-size: 0.88rem; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 2px; }
-    .work-home { max-width: 1120px; margin: 0 auto; padding: 0 2.5rem 3.5rem; }
+    .hx-links { gap: 0.7rem; flex-wrap: wrap; }
+    .hx-links a { display: inline-block; color: var(--navy); font-weight: 600; font-size: 0.88rem; padding: 0.55rem 1.2rem; border: 1.5px solid var(--navy); border-radius: 999px; transition: background 0.15s, color 0.15s; }
+    .hx-links a:hover, .hx-links a:focus-visible { background: var(--navy); color: #fff; opacity: 1; }
+    .work-home { max-width: 70rem; margin: 0 auto; padding: 0 2.5rem 3.5rem; }
     .wk-three { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 1.5rem 3rem; }
     .wk-panel { background: #f2f4f7; border-radius: 14px; padding: 1.6rem 2.4rem 1.5rem; }
     .wk-panel .wk-side { margin-top: 1.4rem; padding-top: 1.4rem; border-top: 1px solid #dde3ea; }
