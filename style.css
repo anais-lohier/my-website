@@ -717,7 +717,7 @@ body.work-page footer { color: var(--ink-light); border-top-color: var(--border)
 }
 
 .work-hero-banner { background: var(--navy); }
-.work-hero-banner img { opacity: 0.4; }
+.work-hero-banner img { opacity: 0.4; object-position: center 33%; }
 
 .work-track-wrap { max-width: 1240px; margin: 0 auto; }
 .work-track-label { color: var(--steel); }
