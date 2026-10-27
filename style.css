@@ -422,7 +422,7 @@ body.work-page .nav-links a:hover {
 
 /* ── EDUCATION PAGE ── */
 body.education-page {
-  background: url('images/magritte-bg.jpg') no-repeat center center fixed;
+  background: url('images/magritte-stethoscope.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 body.education-page::before {
@@ -588,7 +588,7 @@ body.resume-page .nav-links a:hover {
 
 /* ── CONNECT PAGE ── */
 body.connect-page {
-  background: url('images/magritte-bg.jpg') no-repeat center center fixed;
+  background: url('images/magritte-stethoscope.jpg') no-repeat center center fixed;
   background-size: cover; min-height: 100vh; display: flex; flex-direction: column;
 }
 body.connect-page::before {
