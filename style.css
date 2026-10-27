@@ -381,7 +381,7 @@ body.work-page .nav-links a:hover {
   min-height: 210px; transition: min-height 0.4s ease;
 }
 .work-card-logo img { max-width: 70%; max-height: 110px; object-fit: contain; }
-.work-card-body { padding: 1.1rem 1.3rem 1.2rem; border-top: 1px solid rgba(255,255,255,0.07); height: 7rem; box-sizing: border-box; flex-shrink: 0; }
+.work-card-body { padding: 1.1rem 1.3rem 1.2rem; border-top: 1px solid rgba(255,255,255,0.07); min-height: 7rem; box-sizing: border-box; flex-shrink: 0; }
 .work-card-tag {
   font-family: 'Space Mono', monospace; font-size: 0.55rem;
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--parchment); margin-bottom: 0.35rem;
@@ -422,7 +422,7 @@ body.work-page .nav-links a:hover {
 
 /* ── EDUCATION PAGE ── */
 body.education-page {
-  background: url('images/magritte-stethoscope-v2.jpg') no-repeat center center fixed;
+  background: url('images/magritte-stethoscope-v2.jpg') no-repeat center 28% fixed;
   background-size: cover;
 }
 body.education-page::before {
@@ -588,7 +588,7 @@ body.resume-page .nav-links a:hover {
 
 /* ── CONNECT PAGE ── */
 body.connect-page {
-  background: url('images/magritte-stethoscope-v2.jpg') no-repeat center center fixed;
+  background: url('images/magritte-stethoscope-v2.jpg') no-repeat center 28% fixed;
   background-size: cover; min-height: 100vh; display: flex; flex-direction: column;
 }
 body.connect-page::before {
@@ -743,7 +743,7 @@ body.dark-ombre .nav-left { color: #fff !important; }
 body.dark-ombre .nav-links a { color: rgba(255,255,255,0.65) !important; }
 body.dark-ombre .nav-links a:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.12); color: #fff !important; }
 body.dark-ombre .work-hero-banner { background: transparent; }
-body.dark-ombre .work-hero-banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, #0D1B2A 100%); }
+body.dark-ombre .work-hero-banner::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(22,40,60,0) 25%, rgba(22,40,60,0.75) 70%, rgb(22,40,60) 100%); }
 body.dark-ombre .work-hero-banner h1 { z-index: 3; }
 body.dark-ombre .edu-card { border-color: transparent; box-shadow: 0 20px 60px rgba(0,0,0,0.35); }
 body.dark-ombre footer { color: rgba(255,255,255,0.3); border-top-color: rgba(255,255,255,0.08); }
@@ -755,10 +755,41 @@ body.work-page .work-expand-btn { background: #f3f5f8; border-color: #d5dde6; co
 body.work-page .work-card:hover .work-expand-btn, body.work-page .work-card.open .work-expand-btn { background: var(--navy); color: #fff; }
 
 /* bolder section labels */
-.work-track-label { font-weight: 700; font-size: 0.66rem; color: var(--navy); }
+.work-track-label { font-weight: 700; font-size: 0.82rem; color: var(--navy); }
 .work-track-label::after { background: rgba(30,49,73,0.25); }
 
 /* large screens: cap banner height, scale type up */
 .work-hero-banner { max-height: 300px; }
-@media (min-width: 1700px) { html { font-size: 18px; } }
-@media (min-width: 2200px) { html { font-size: 20px; } }
+html { font-size: clamp(16px, calc(8px + 0.56vw), 21px); }
+
+/* Work page: larger card text */
+.work-page .work-card-tag { font-size: 0.64rem; }
+.work-page .work-card-title { font-size: 1.2rem; }
+.work-page .work-card-date { font-size: 0.72rem; }
+.work-page .work-card-details ul li { font-size: 0.92rem; }
+
+/* Connect: line the painting up with the page banners */
+body.connect-page {
+  background-size: 100vw auto;
+  background-position: center calc(64px - (131.14vw - min(max(30vh, 180px), 300px)) * 0.28);
+  background-color: #2a3646;
+}
+@media (max-aspect-ratio: 4/5) {
+  body.connect-page { background-size: cover; background-position: center 20%; }
+}
+
+/* Education: dark page, but banner and nav match the other tabs */
+body.dark-ombre nav { background: rgba(255,255,255,0.96); border-bottom-color: #e9ecf0; }
+body.dark-ombre .nav-left { color: var(--navy) !important; }
+body.dark-ombre .nav-links a { color: var(--ink-mid) !important; }
+body.dark-ombre .nav-links a:hover { background: rgba(30,49,73,0.06); border-color: var(--border); color: var(--navy) !important; }
+body.dark-ombre .work-hero-banner { background: var(--navy); }
+body.dark-ombre .work-hero-banner::after { content: none; }
+@media (max-width: 768px) { body.dark-ombre .nav-links { background: rgba(255,255,255,0.98); border-color: #e9ecf0; } }
+html:has(body.dark-ombre) { background: #1f252f; }
+body.dark-ombre { background: linear-gradient(100deg, #282D3B 0%, #272C3A 50%, #1F252F 100%); }
+body.dark-ombre nav { background: #282D3B; border-bottom-color: rgba(255,255,255,0.06); }
+body.dark-ombre .nav-left { color: #fff !important; }
+body.dark-ombre .nav-links a { color: rgba(255,255,255,0.75) !important; }
+body.dark-ombre .nav-links a:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.12); color: #fff !important; }
+@media (max-width: 768px) { body.dark-ombre .nav-links { background: #282D3B; border-color: rgba(255,255,255,0.1); } }
