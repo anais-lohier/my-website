@@ -717,7 +717,7 @@ body.work-page footer { color: var(--ink-light); border-top-color: var(--border)
 }
 
 .work-hero-banner { background: var(--navy); }
-.work-hero-banner img { opacity: 0.4; object-position: center 28%; }
+.work-hero-banner img { opacity: 0.4; }
 
 .work-track-wrap { max-width: 1240px; margin: 0 auto; }
 .work-track-label { color: var(--steel); }
@@ -771,7 +771,6 @@ html { font-size: clamp(16px, calc(8px + 0.56vw), 21px); }
 /* Connect: line the painting up with the page banners */
 body.connect-page {
   background-size: 100vw auto;
-  background-position: center calc(64px - (131.14vw - min(max(30vh, 180px), 300px)) * 0.28);
   background-color: #2a3646;
 }
 @media (max-aspect-ratio: 4/5) {
@@ -822,3 +821,56 @@ body.connect-page .connect-link-info .c-value { color: #fff; font-weight: 600; }
 body.connect-page .connect-link-icon { color: #f0dc9a; background: rgba(240,220,154,0.15); border-color: rgba(240,220,154,0.35); }
 body.connect-page .connect-link-row { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2); }
 body.connect-page .connect-card .tagline { font-size: 0.9rem; text-wrap: balance; max-width: 34em; margin-left: auto; margin-right: auto; }
+
+@property --r { syntax: '<length>'; inherits: false; initial-value: 0px; }
+/* Connect: hidden line under the card, revealed by a dark circle that follows the cursor */
+.secret {
+  position: fixed; left: 50%; bottom: 10px; transform: translateX(-50%); z-index: 1;
+  padding: 4px 24px; cursor: none;
+  font-family: 'DM Serif Display', serif; font-style: italic; font-size: 0.85rem;
+  white-space: nowrap; user-select: none;
+}
+.secret-faint { color: rgba(255,255,255,0.08); }
+.secret-lens {   /* 40px larger than the hover area on every side, so the circle isn't cut off */
+  position: absolute; inset: -40px; padding: 44px 64px;
+  background: #1c140c; color: #e8dcb0;
+  clip-path: circle(var(--r) at var(--x, 50%) var(--y, 50%));
+  transition: --r 0.2s ease-out;   /* only the size animates; the position tracks the cursor instantly */
+  pointer-events: none;
+}
+.secret:hover .secret-lens { --r: 30px; }
+@media (hover: none), (max-width: 900px) { .secret { display: none; } }
+@media (hover: hover) and (min-width: 901px) { body.connect-page .connect-body { padding-bottom: 3.2rem; } }   /* room for the hidden line */
+.secret-by { font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 0.7em; letter-spacing: 0.04em; margin-left: 0.4em; }
+
+/* Short screens: tighter card so there's room for both */
+@media (min-width: 721px) and (max-height: 820px) {
+  body.connect-page .connect-card { padding: 1rem 1.4rem; gap: 0.5rem; }
+  body.connect-page .connect-card h1 { font-size: 1.7rem; margin-bottom: 0; }
+  body.connect-page .connect-card .tagline { font-size: 0.8rem; margin-bottom: 0.2rem; line-height: 1.45; }
+}
+
+/* ── Magritte painting: same size and height on every tab ──
+   Always full width (--paint-w). --paint-top is where its top edge sits in the window:
+   the apple just under the nav, unless that would push the stethoscope behind the Connect card
+   (70vh - 30px approximates the card's top), in which case the stethoscope wins.
+   Every banner and the Connect background use these, so the painting lines up across tabs. */
+:root {
+  --paint-w: 100vw;
+  --paint-top: min(calc(80px - 0.29 * var(--paint-w)), calc(70vh - 30px - 0.6885 * var(--paint-w)));
+}
+.work-hero-banner img {
+  inset: auto; left: 0; top: calc(var(--paint-top) - 64px);   /* banners start under the 64px nav */
+  width: 100%; height: auto; max-width: none; object-fit: fill;
+}
+body.connect-page { background-image: none; }
+body.connect-page::after {
+  content: ''; position: fixed; z-index: -2; left: 0; top: var(--paint-top);
+  width: var(--paint-w); aspect-ratio: 896 / 1175;
+  background: url('images/magritte-stethoscope-v2.jpg') center / 100% 100% no-repeat;
+}
+/* tall/portrait screens keep the old full-cover background on Connect */
+@media (max-aspect-ratio: 4/5) {
+  body.connect-page { background-image: url('images/magritte-stethoscope-v2.jpg'); }
+  body.connect-page::after { content: none; }
+}
